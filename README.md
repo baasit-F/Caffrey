@@ -32,7 +32,7 @@ python3 -m http.server 4321
 - `mockups/`: desktop and phone screenshots for the pitch deck
 - `SEO-AEO-PLAN.md`: search and AI-answer strategy
 - `robots.txt`, `llms.txt`
-- `export_mockup.py`: writes a portable, clearly labelled mockup (both sites, relative links, noindex) to `dist/` and zips it for sharing
+- `export_mockup.py`: writes a portable, clearly labelled Caffrey-only mockup (relative links, noindex, no Capri mentions) to `dist/` and zips it for sharing
 
 ## Confirm with the client before launch
 - Season open/close dates, and the full campground rules

@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Export a portable, clearly-labelled mockup of the Caffrey site + Capri concept.
+"""Export a portable, clearly-labelled mockup of the Caffrey site.
 
 The live build uses root-relative URLs (/camping/, /assets/...) meant for
 hosting at caffreyrecreation.com. This flattens every page to a top-level
 .html file with relative links, so the mockup opens straight from disk
 (double-click index.html) or from any static host, and adds a
 "design mockup" banner so it's never mistaken for the official site.
+The mockup is Caffrey-only: every Capri Marine mention is stripped.
 Run after build.py:  python3 export_mockup.py
 """
+import json
 import re
 import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-OUT = ROOT / "dist" / "caffrey-capri-mockup"
+OUT = ROOT / "dist" / "caffrey-mockup"
 
 PAGES = {  # built page -> flat file name
     "index.html": "index.html",
@@ -28,8 +30,7 @@ ROUTES = {"/": "index.html", "/camping/": "camping.html", "/rates/": "rates.html
           "/lake-wallenpaupack-guide/": "lake-guide.html", "/faq/": "faq.html", "/contact/": "contact.html"}
 
 BANNER = ('<div style="position:relative;z-index:50;background:#ffb454;color:#0d1b1e;font:600 13px/1.4 system-ui,sans-serif;'
-          'text-align:center;padding:8px 16px">Design mockup prepared for {who}, not the official website. '
-          '<a href="{other}" style="color:inherit">{other_label} →</a></div>')
+          'text-align:center;padding:8px 16px">Design mockup prepared for Caffrey Recreation Area, not the official website.</div>')
 
 
 def relink(html):
@@ -43,27 +44,39 @@ def relink(html):
     return html
 
 
+def strip_capri(html):
+    html = re.sub(r'<li><a href="[^"]*#capri-marine">[^<]*</a></li>', "", html)
+    html = re.sub(r'<section id="capri-marine">.*?</section>\s*', "", html, flags=re.S)
+    html = re.sub(r'<details class="qa"><summary>[^<]*</summary><p>[^<]*Capri[^<]*</p></details>\s*', "", html)
+
+    def faq_ld(m):
+        data = json.loads(m.group(1))
+        if data.get("@type") == "FAQPage":
+            data["mainEntity"] = [q for q in data["mainEntity"] if "Capri" not in json.dumps(q)]
+        return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', faq_ld, html, flags=re.S)
+
+
 def main():
-    if OUT.exists():
-        shutil.rmtree(OUT)
+    for old in (OUT, OUT.with_suffix(".zip")):
+        if old.is_dir():
+            shutil.rmtree(old)
+        elif old.exists():
+            old.unlink()
     shutil.copytree(ROOT / "assets", OUT / "assets")
-    caffrey_banner = BANNER.format(who="Caffrey Recreation Area", other="capri-marine.html", other_label="See the Capri Marine concept")
     for src, dst in PAGES.items():
-        html = relink((ROOT / src).read_text())
-        html = html.replace('<a class="skip"', caffrey_banner + '\n<a class="skip"', 1)
+        html = strip_capri(relink((ROOT / src).read_text()))
+        html = html.replace('<a class="skip"', BANNER + '\n<a class="skip"', 1)
         html = html.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"', 1)
         (OUT / dst).write_text(html)
 
-    capri = (ROOT / "concepts/capri-marine/index.html").read_text().replace("../../assets/", "assets/")
-    capri = capri.replace("<body>", "<body>\n" + BANNER.format(who="Capri Marine", other="index.html", other_label="See the Caffrey Recreation site"), 1)
-    capri = capri.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"', 1)
-    (OUT / "capri-marine.html").write_text(capri)
-
-    # Leftover root-relative links would break from disk
     for f in OUT.glob("*.html"):
-        bad = re.findall(r'(?:href|src)="/(?!/)[^"]*"', f.read_text())
+        text = f.read_text()
+        bad = re.findall(r'(?:href|src)="/(?!/)[^"]*"', text)
         if bad:
             raise SystemExit(f"{f.name}: unconverted links {bad[:3]}")
+        if re.search("capri", text, re.I):
+            raise SystemExit(f"{f.name}: still mentions Capri")
     archive = shutil.make_archive(str(OUT), "zip", OUT.parent, OUT.name)
     print("exported", OUT.relative_to(ROOT), "and", Path(archive).relative_to(ROOT))
 
