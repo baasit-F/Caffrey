@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caffrey Recreation Area | Lakefront Camping on Lake Wallenpaupack, PA</title>
+<meta name="description" content="Old-school lakefront camping in the Poconos. 29 waterfront RV &amp; tent sites, boat launch, gas dock and camp store on Lake Wallenpaupack's west shore. Call (570) 226-4608.">
+<link rel="canonical" href="https://caffreyrecreation.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rye&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["Campground","LocalBusiness"],"name":"Caffrey Recreation Area","url":"https://caffreyrecreation.com/","telephone":"+1-570-226-4608","email":"Reservations@caffreyrecreation.com","priceRange":"$40–$65 per night","petsAllowed":false,"address":{"@type":"PostalAddress","streetAddress":"431 Lakeshore Drive","addressLocality":"Lakeville","addressRegion":"PA","postalCode":"18438","addressCountry":"US"}}
+</script>
+<style>
+:root{--paper:#f3e6cc;--paper2:#ead8b4;--rust:#c4532d;--mustard:#e7a632;--teal:#1d5c63;--night:#1b2a33;--pine:#2f4a3a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Work Sans",sans-serif;background:var(--paper);color:var(--night);
+  background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:4px 4px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Bebas Neue",sans-serif;letter-spacing:.02em;line-height:.92;font-weight:400}
+a{color:inherit}
+.top{background:var(--night);color:var(--paper);font-size:13px;text-align:center;padding:8px;letter-spacing:.1em;text-transform:uppercase}
+.top a{color:var(--mustard)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
+.brand{font-family:Rye,serif;font-size:24px;color:var(--rust);text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.1em}
+nav ul a{text-decoration:none}
+.stamp{background:var(--rust);color:var(--paper);padding:12px 20px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:13px;text-decoration:none;border:3px solid var(--night);box-shadow:4px 4px 0 var(--night);display:inline-block}
+.stamp:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--night)}
+/* poster hero */
+.poster{margin:10px auto 0;border:6px solid var(--night);border-radius:6px;overflow:hidden;position:relative;background:var(--mustard)}
+.poster svg{display:block;width:100%;height:auto}
+.poster .title{position:absolute;left:0;right:0;top:6%;text-align:center;color:var(--night)}
+.poster .title small{font-family:"Work Sans";font-weight:800;font-size:clamp(11px,1.4vw,16px);letter-spacing:.4em;text-transform:uppercase}
+.poster h1{font-size:clamp(56px,11vw,150px);color:var(--paper);text-shadow:5px 5px 0 var(--night)}
+.poster .sub{font-family:Rye,serif;font-size:clamp(16px,2.4vw,30px);color:var(--night)}
+.ribbon{background:var(--rust);color:var(--paper);border:6px solid var(--night);border-top:0;display:flex;justify-content:space-around;flex-wrap:wrap;padding:14px;font-family:"Bebas Neue";font-size:26px;letter-spacing:.06em;border-radius:0 0 6px 6px}
+/* badges */
+.badges{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:70px 0}
+.badge{text-align:center}
+.badge .circle{width:130px;height:130px;margin:0 auto 14px;border-radius:50%;border:4px solid var(--night);background:var(--paper2);display:grid;place-items:center;font-size:50px;box-shadow:inset 0 0 0 8px var(--paper),inset 0 0 0 10px var(--night);transition:transform .3s}
+.badge:hover .circle{transform:rotate(-10deg) scale(1.05)}
+.badge h3{font-size:28px}
+.badge p{font-size:14px;max-width:220px;margin:4px auto 0}
+/* site map */
+.mapsec{background:var(--teal);color:var(--paper);padding:70px 0;border-top:6px solid var(--night);border-bottom:6px solid var(--night)}
+.mapsec h2{font-size:clamp(48px,7vw,90px)}
+.mapsec .lead{max-width:560px;margin:8px 0 30px;opacity:.9}
+.mapgrid{display:grid;grid-template-columns:2fr 1fr;gap:30px;align-items:start}
+.sitemap{background:var(--paper);border:5px solid var(--night);border-radius:8px;padding:10px}
+.sitemap svg{width:100%;height:auto;display:block}
+.site{cursor:pointer;transition:transform .15s}
+.site:hover rect,.site.sel rect{fill:var(--rust)}
+.site:hover text,.site.sel text{fill:var(--paper)}
+.panel{background:var(--paper);color:var(--night);border:5px solid var(--night);border-radius:8px;padding:26px;box-shadow:8px 8px 0 var(--night)}
+.panel h3{font-size:48px;color:var(--rust)}
+.panel dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 20px;font-size:15px}
+.panel dt{font-weight:800}
+.legend{display:flex;gap:16px;font-size:13px;margin-top:12px}
+.legend i{display:inline-block;width:14px;height:14px;border:2px solid var(--night);vertical-align:-2px;margin-right:6px}
+.note{font-size:12px;opacity:.7;margin-top:10px}
+/* rates ticket */
+.tickets{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:70px 0}
+.ticket{background:var(--paper2);border:4px solid var(--night);position:relative;padding:30px 30px 30px 110px;min-height:220px}
+.ticket::before{content:attr(data-kind);position:absolute;left:0;top:0;bottom:0;width:80px;background:var(--rust);color:var(--paper);writing-mode:vertical-rl;transform:rotate(180deg);font-family:"Bebas Neue";font-size:34px;display:flex;align-items:center;justify-content:center;letter-spacing:.1em;border-left:4px dashed var(--night)}
+.ticket h3{font-size:40px}
+.ticket table{width:100%;margin-top:10px;border-collapse:collapse;font-size:16px}
+.ticket td{padding:7px 0;border-bottom:2px dotted rgba(0,0,0,.25)}
+.ticket td:last-child{text-align:right;font-family:"Bebas Neue";font-size:28px}
+.rules{font-size:14px;text-align:center;padding-bottom:60px;max-width:760px;margin:0 auto}
+/* faq */
+.faq{background:var(--night);color:var(--paper);padding:70px 0}
+.faq h2{font-size:clamp(48px,7vw,90px);color:var(--mustard);margin-bottom:24px}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.qa div{border:3px solid var(--paper);padding:22px;border-radius:6px}
+.qa h3{font-size:28px;color:var(--mustard);margin-bottom:6px}
+footer{padding:40px 0;text-align:center;font-size:14px}
+footer .brand{display:block;font-size:34px;margin-bottom:8px}
+@media(max-width:860px){nav ul{display:none}.badges{grid-template-columns:1fr 1fr}.mapgrid,.tickets,.qa{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top">⛺ Now booking next season · <a href="tel:+15702264608">(570) 226-4608</a></div>
+<nav><div class="wrap">
+  <a class="brand" href="#">Caffrey</a>
+  <ul><li><a href="#sites">Pick a Site</a></li><li><a href="#rates">Rates</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="stamp" href="#sites">Reserve</a>
+</div></nav>
+
+<main class="wrap">
+  <div class="poster" role="img" aria-label="Illustrated poster of Lake Wallenpaupack at sunset with tents and a dock">
+    <svg viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2b84b"/><stop offset=".55" stop-color="#ea8a3b"/><stop offset="1" stop-color="#c4532d"/></linearGradient>
+      </defs>
+      <rect width="1200" height="640" fill="url(#sky)"/>
+      <circle cx="600" cy="400" r="120" fill="#f8dc8a"/>
+      <g fill="#f8dc8a" opacity=".5"><rect x="0" y="330" width="1200" height="6"/><rect x="0" y="352" width="1200" height="5"/><rect x="0" y="372" width="1200" height="4"/></g>
+      <path d="M0 420 L140 330 L240 380 L380 280 L520 380 L640 330 L780 390 L900 300 L1040 370 L1200 310 L1200 640 L0 640Z" fill="#8a3a2a"/>
+      <path d="M0 460 L180 390 L320 440 L470 380 L640 450 L820 400 L980 450 L1200 390 L1200 640 L0 640Z" fill="#2f4a3a"/>
+      <rect x="0" y="470" width="1200" height="170" fill="#1d5c63"/>
+      <g stroke="#f8dc8a" stroke-width="4" opacity=".7"><line x1="520" y1="495" x2="680" y2="495"/><line x1="550" y1="520" x2="650" y2="520"/><line x1="575" y1="545" x2="625" y2="545"/></g>
+      <!-- dock -->
+      <g fill="#1b2a33"><rect x="820" y="520" width="380" height="14"/><rect x="850" y="520" width="8" height="60"/><rect x="940" y="520" width="8" height="60"/><rect x="1030" y="520" width="8" height="60"/><rect x="1120" y="520" width="8" height="60"/></g>
+      <path d="M880 508 Q960 490 1060 508 L1040 520 L900 520Z" fill="#f3e6cc" stroke="#1b2a33" stroke-width="4"/>
+      <!-- pines -->
+      <g fill="#1b2a33">
+        <path d="M60 480 L100 360 L140 480Z"/><path d="M120 480 L150 400 L180 480Z"/><path d="M30 480 L55 410 L80 480Z"/>
+        <path d="M1150 470 L1175 400 L1200 470Z"/>
+      </g>
+      <!-- tent -->
+      <path d="M220 480 L280 400 L340 480Z" fill="#f3e6cc" stroke="#1b2a33" stroke-width="5"/>
+      <path d="M280 400 L280 480 L300 480Z" fill="#c4532d"/>
+      <!-- fire -->
+      <path d="M380 478 Q390 450 400 478Z" fill="#f8dc8a"/>
+    </svg>
+    <div class="title">
+      <small>Lake Wallenpaupack · Pennsylvania</small>
+      <h1>Caffrey</h1>
+      <div class="sub">Recreation Area · Est. on the West Shore</div>
+    </div>
+  </div>
+  <div class="ribbon"><span>29 Lakefront Sites</span><span>Boat Launch</span><span>Gas Dock</span><span>Camp Store</span></div>
+
+  <div class="badges">
+    <div class="badge"><div class="circle">⛺</div><h3>Pitch or Park</h3><p>RV, trailer or tent — 30 amp electric &amp; water everywhere.</p></div>
+    <div class="badge"><div class="circle">🚤</div><h3>Launch It</h3><p>$10 boat storage &amp; launch for your whole stay.</p></div>
+    <div class="badge"><div class="circle">🍦</div><h3>Camp Store</h3><p>Bait, tackle, firewood, ice — and ice cream.</p></div>
+    <div class="badge"><div class="circle">🔥</div><h3>Fire Rings</h3><p>Every site gets a fire ring and picnic table.</p></div>
+  </div>
+</main>
+
+<section class="mapsec" id="sites">
+  <div class="wrap">
+    <h2>Pick your spot</h2>
+    <p class="lead">Tap a site on the shoreline to see what's there, then request it. (Illustrative layout — we'd build this from the real site plan.)</p>
+    <div class="mapgrid">
+      <div class="sitemap">
+        <svg id="map" viewBox="0 0 700 360" aria-label="Campground site map">
+          <rect width="700" height="360" fill="#ead8b4"/>
+          <path d="M0 250 Q180 200 350 240 T700 220 L700 360 L0 360Z" fill="#1d5c63"/>
+          <text x="470" y="330" font-family="Bebas Neue" font-size="28" fill="#f3e6cc">Lake Wallenpaupack</text>
+          <path d="M0 60 Q350 100 700 50" stroke="#1b2a33" stroke-width="10" fill="none" stroke-dasharray="2 0"/>
+          <text x="20" y="45" font-family="Work Sans" font-weight="800" font-size="12" fill="#1b2a33">LAKESHORE DR</text>
+          <g id="siteDots"></g>
+          <g font-family="Work Sans" font-size="11" font-weight="800" fill="#1b2a33">
+            <rect x="300" y="80" width="70" height="34" fill="#c4532d" stroke="#1b2a33" stroke-width="3"/><text x="309" y="101" fill="#f3e6cc">STORE</text>
+            <rect x="600" y="230" width="60" height="10" fill="#1b2a33"/><text x="602" y="225">LAUNCH</text>
+          </g>
+        </svg>
+        <div class="legend"><span><i style="background:#f3e6cc"></i>RV / Trailer</span><span><i style="background:#e7a632"></i>Tent</span><span><i style="background:#c4532d"></i>Selected</span></div>
+      </div>
+      <aside class="panel" aria-live="polite">
+        <h3 id="sName">Site —</h3>
+        <dl><dt>Type</dt><dd id="sType">Pick a site</dd><dt>Hookups</dt><dd>30 amp · water</dd><dt>Tonight</dt><dd id="sPrice">—</dd><dt>View</dt><dd id="sView">—</dd></dl>
+        <a class="stamp" id="sReq" href="mailto:Reservations@caffreyrecreation.com">Request this site</a>
+        <p class="note">Max 8 guests · no pets · 1-night deposit</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" id="rates">
+  <div class="tickets">
+    <div class="ticket" data-kind="RV · Trailer"><h3>RV &amp; Trailer Sites</h3><table><tr><td>Regular night</td><td>$52</td></tr><tr><td>Weekend night</td><td>$58</td></tr><tr><td>Holiday night</td><td>$65</td></tr></table></div>
+    <div class="ticket" data-kind="Tent"><h3>Tent Sites</h3><table><tr><td>Regular night</td><td>$40</td></tr><tr><td>Weekend night</td><td>$46</td></tr><tr><td>Holiday night</td><td>$48</td></tr></table></div>
+  </div>
+  <p class="rules">Rates include 4 people · extra guests $10/night (up to 8) · kids under 5 free · boat launch $10/stay · cancel 15+ days out for a refund minus $25.</p>
+</div>
+
+<section class="faq" id="faq"><div class="wrap">
+  <h2>Campfire Q&amp;A</h2>
+  <div class="qa">
+    <div><h3>Where exactly are you?</h3><p>431 Lakeshore Drive, Lakeville, PA 18438 — west shore of Lake Wallenpaupack off Route 590.</p></div>
+    <div><h3>Can I bring my boat?</h3><p>Yes. $10 covers storage and launching for your whole stay, and the gas dock is right here.</p></div>
+    <div><h3>Dogs?</h3><p>Sorry — no pets at Caffrey.</p></div>
+    <div><h3>How do I book?</h3><p>Call (570) 226-4608 or email Reservations@caffreyrecreation.com.</p></div>
+  </div>
+</div></section>
+
+<footer><span class="brand">Caffrey</span>431 Lakeshore Dr, Lakeville, PA 18438 · (570) 226-4608 · © Caffrey Recreation LLC</footer>
+
+<script>
+// Illustrative 29-site layout along the shoreline
+const g=document.getElementById("siteDots"),ns='http://www.w3.org/2000/svg';
+const views=['Open water','Sunset side','Near the dock','Shaded pines','Cove view'];
+for(let i=0;i<29;i++){
+  const row=i<15?0:1, col=row?i-15:i;
+  const x=row?50+col*44:20+col*44, y=row?150:185+Math.sin(col/2)*6;
+  const tent=[3,7,11,18,22,26].includes(i+1);
+  const s=document.createElementNS(ns,'g');s.setAttribute('class','site');s.setAttribute('tabindex','0');
+  s.innerHTML=`<rect x="${x}" y="${y}" width="36" height="28" rx="3" fill="${tent?'#e7a632':'#f3e6cc'}" stroke="#1b2a33" stroke-width="2.5"/><text x="${x+18}" y="${y+19}" text-anchor="middle" font-family="Bebas Neue" font-size="16" fill="#1b2a33">${i+1}</text>`;
+  const pick=()=>{document.querySelectorAll('.site.sel').forEach(e=>e.classList.remove('sel'));s.classList.add('sel');
+    sName.textContent='Site '+(i+1);sType.textContent=tent?'Tent (2 tents max)':'RV / Trailer';
+    sPrice.textContent=tent?'from $40':'from $52';sView.textContent=row?views[i%5].replace('Open water','Second row, lake view'):views[i%5];
+    sReq.href='mailto:Reservations@caffreyrecreation.com?subject='+encodeURIComponent('Reservation request — Site '+(i+1));};
+  s.addEventListener('click',pick);s.addEventListener('keydown',e=>{if(e.key==='Enter')pick()});
+  g.appendChild(s);
+}
+</script>
+</body>
+</html>

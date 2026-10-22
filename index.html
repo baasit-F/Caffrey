@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caffrey Redesign Concepts</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:#f4f2ee;color:#1a1a1a;padding:48px 20px}
+.wrap{max-width:1180px;margin:0 auto}
+h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.03em}
+.sub{color:#666;margin:8px 0 36px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+a.card{display:block;background:#fff;border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 30px rgba(0,0,0,.06);transition:transform .2s}
+a.card:hover{transform:translateY(-4px)}
+.frame{height:300px;overflow:hidden;position:relative;background:#ddd}
+.frame iframe{width:1280px;height:960px;border:0;transform:scale(.29);transform-origin:0 0;pointer-events:none}
+.body{padding:20px}
+.body small{font-weight:800;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#c4532d}
+.body h2{font-size:22px;margin:6px 0}
+.body p{font-size:14px;color:#555}
+.notes{margin-top:40px;background:#fff;border-radius:18px;padding:28px;font-size:15px;line-height:1.7}
+.notes h3{margin-bottom:8px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.frame iframe{transform:scale(.27)}}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Caffrey Recreation Area — redesign concepts</h1>
+<p class="sub">Three directions for caffreyrecreation.com. Each has the same real content (rates, hours, amenities) plus SEO/AEO structured data. Pick one, or mix pieces from each.</p>
+<div class="grid">
+  <a class="card" href="concepts/a-lakeside-editorial.html"><div class="frame"><iframe src="concepts/a-lakeside-editorial.html" loading="lazy" tabindex="-1" title="Concept A preview"></iframe></div><div class="body"><small>Concept A</small><h2>Lakeside Editorial</h2><p>Full-bleed lake photography, serif type, booking bar up top. Calm, premium, trustworthy. Best fit for families and RV regulars.</p></div></a>
+  <a class="card" href="concepts/b-retro-camp-poster.html"><div class="frame"><iframe src="concepts/b-retro-camp-poster.html" loading="lazy" tabindex="-1" title="Concept B preview"></iframe></div><div class="body"><small>Concept B</small><h2>Retro Camp Poster</h2><p>Illustrated national-park poster style with a clickable 29-site map. Memorable, very shareable, doesn't depend on photo quality.</p></div></a>
+  <a class="card" href="concepts/c-trip-planner.html"><div class="frame"><iframe src="concepts/c-trip-planner.html" loading="lazy" tabindex="-1" title="Concept C preview"></iframe></div><div class="body"><small>Concept C</small><h2>Trip Planner</h2><p>App-style bento layout: live price calculator, "open now" status, quick answers written for AI search. Most conversion-focused.</p></div></a>
+</div>
+<div class="notes">
+  <h3>What's built into all three</h3>
+  <p>Schema.org <code>Campground</code> + <code>LocalBusiness</code> JSON-LD · <code>FAQPage</code> markup · tap-to-call · mobile layout · real rates/hours from the current site · alt text. See <a href="SEO-AEO-PLAN.md">SEO-AEO-PLAN.md</a> for the full search strategy.</p>
+</div>
+</div></body></html>

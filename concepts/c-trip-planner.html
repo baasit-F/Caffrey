@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan Your Lake Wallenpaupack Camping Trip | Caffrey Recreation Area</title>
+<meta name="description" content="Price your lakefront camping trip in seconds. RV sites from $52, tent sites from $40 on Lake Wallenpaupack, Lakeville PA. Boat launch, gas dock and camp store on site.">
+<link rel="canonical" href="https://caffreyrecreation.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["Campground","LocalBusiness"],"name":"Caffrey Recreation Area","url":"https://caffreyrecreation.com/","telephone":"+1-570-226-4608","email":"Reservations@caffreyrecreation.com","priceRange":"$40–$65 per night","petsAllowed":false,"address":{"@type":"PostalAddress","streetAddress":"431 Lakeshore Drive","addressLocality":"Lakeville","addressRegion":"PA","postalCode":"18438","addressCountry":"US"},"makesOffer":[{"@type":"Offer","name":"RV / Trailer site","price":"52","priceCurrency":"USD"},{"@type":"Offer","name":"Tent site","price":"40","priceCurrency":"USD"}]}
+</script>
+<style>
+:root{--bg:#0d1b1e;--panel:#13282c;--line:#23413f;--text:#e9f2ee;--mute:#8fb0a8;--lake:#3cc6b4;--sun:#ffb454}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Space Grotesk",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:20px}
+.logo{font-weight:700;font-size:20px;text-decoration:none}
+.logo span{color:var(--lake)}
+.status{font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:#e05b5b}
+.dot.open{background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.2)}
+/* hero bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:14px;padding:10px 0 60px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;overflow:hidden;position:relative}
+.t-hero{grid-column:span 7;grid-row:span 5;padding:0;background:url(../assets/img/photo3.jpg) center/cover}
+.t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(13,27,30,.95))}
+.t-hero .in{position:absolute;bottom:0;left:0;right:0;padding:32px;z-index:1}
+.t-hero h1{font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.03em}
+.t-hero p{color:#cfe3dd;margin-top:10px;max-width:480px}
+.t-calc{grid-column:span 5;grid-row:span 5;display:flex;flex-direction:column}
+.t-calc h2{font-size:22px;margin-bottom:16px}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg);border-radius:12px;padding:4px;margin-bottom:16px}
+.seg button{background:none;border:0;color:var(--mute);padding:10px;border-radius:9px;font:500 15px "Space Grotesk";cursor:pointer}
+.seg button.on{background:var(--lake);color:var(--bg)}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.row small{color:var(--mute);display:block;font-size:12px}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:18px;cursor:pointer}
+.step b{min-width:22px;text-align:center}
+.toggle{width:44px;height:26px;border-radius:999px;background:var(--line);border:0;position:relative;cursor:pointer}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--text);transition:.2s}
+.toggle.on{background:var(--lake)}.toggle.on::after{left:21px}
+.total{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;padding-top:16px}
+.total b{font-size:44px;color:var(--sun);letter-spacing:-.02em}
+.total small{color:var(--mute);font-size:12px}
+.cta{display:block;text-align:center;background:var(--sun);color:var(--bg);font-weight:700;padding:14px;border-radius:12px;text-decoration:none;margin-top:12px}
+.t-stat{grid-column:span 3;grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
+.t-stat b{font-size:48px;letter-spacing:-.03em;color:var(--lake)}
+.t-stat span{color:var(--mute);font-size:14px}
+.t-photo{grid-column:span 3;grid-row:span 2;padding:0;background:center/cover}
+.t-hours{grid-column:span 6;grid-row:span 2}
+.t-hours h3{font-size:14px;color:var(--mute);font-weight:500;margin-bottom:12px}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.days div{background:var(--bg);border-radius:10px;padding:10px 4px;text-align:center;font-size:12px;color:var(--mute)}
+.days div b{display:block;font-size:14px;color:var(--text)}
+.days div.closed{opacity:.4}
+.days div.today{outline:2px solid var(--lake)}
+/* answers */
+.answers h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.02em;margin-bottom:6px}
+.answers>p{color:var(--mute);margin-bottom:28px}
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.q h3{font-size:17px;margin-bottom:8px}
+.q p{font-size:14px;color:#c2d6d0}
+.near{margin:60px 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.near .tile{min-height:220px}
+.near h3{font-size:24px;margin-bottom:8px}
+.near p{color:var(--mute)}
+.pill{display:inline-block;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(60,198,180,.15);color:var(--lake);margin-bottom:10px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:14px}
+@media(max-width:900px){
+  .bento{grid-template-columns:repeat(6,1fr);grid-auto-rows:110px}
+  .t-hero,.t-calc,.t-hours{grid-column:span 6}.t-calc{grid-row:span 6}
+  .t-stat,.t-photo{grid-column:span 3}
+  .qgrid,.near{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#">Caffrey<span>.</span></a>
+  <div class="status" id="status"><span class="dot" id="dot"></span><span id="statusText">Checking hours…</span></div>
+</div></nav>
+
+<main class="wrap">
+  <div class="bento">
+    <div class="tile t-hero"><div class="in">
+      <h1>Your lake weekend, priced in 10 seconds.</h1>
+      <p>29 waterfront sites on Lake Wallenpaupack's west shore. Pick your setup, see the total, book by phone or email.</p>
+    </div></div>
+
+    <div class="tile t-calc" aria-label="Trip cost calculator">
+      <h2>Plan your stay</h2>
+      <div class="seg" role="tablist"><button class="on" data-type="rv">RV / Trailer</button><button data-type="tent">Tent</button></div>
+      <div class="row"><div>Weeknights<small>Regular rate</small></div><div class="step" data-k="reg"><button>−</button><b>0</b><button>+</button></div></div>
+      <div class="row"><div>Weekend nights<small>Fri &amp; Sat</small></div><div class="step" data-k="wkd"><button>−</button><b>2</b><button>+</button></div></div>
+      <div class="row"><div>Holiday nights<small>3-night deposit</small></div><div class="step" data-k="hol"><button>−</button><b>0</b><button>+</button></div></div>
+      <div class="row"><div>Guests (5+)<small>4 included · kids under 5 free</small></div><div class="step" data-k="guests"><button>−</button><b>4</b><button>+</button></div></div>
+      <div class="row"><div>Bringing a boat?<small>Storage + launch, whole stay</small></div><button class="toggle" id="boat" aria-label="Boat launch"></button></div>
+      <div class="total"><div><small>Estimated total</small><br><b id="total">$116</b></div><div style="text-align:right"><small>Deposit today</small><br><span id="dep">$58</span></div></div>
+      <a class="cta" id="cta" href="#">Request these dates</a>
+    </div>
+
+    <div class="tile t-stat"><span>Lakefront sites</span><b>29</b></div>
+    <div class="tile t-photo" style="background-image:url(../assets/img/photo1.jpg)" role="img" aria-label="Dock view"></div>
+    <div class="tile t-hours"><h3>Office &amp; store hours</h3><div class="days" id="days"></div></div>
+  </div>
+
+  <section class="answers">
+    <h2>Quick answers</h2>
+    <p>Written so Google, ChatGPT and Perplexity can quote them directly.</p>
+    <div class="qgrid">
+      <div class="q"><h3>Best campground on Lake Wallenpaupack with a boat launch?</h3><p>Caffrey Recreation Area has 29 lakefront sites, a $10 per-stay boat launch, slips and an on-site gas dock in Lakeville, PA.</p></div>
+      <div class="q"><h3>How much is RV camping on Lake Wallenpaupack?</h3><p>At Caffrey, RV and trailer sites are $52 regular, $58 weekend and $65 holiday per night with 30 amp electric and water.</p></div>
+      <div class="q"><h3>Is tent camping available?</h3><p>Yes — tent sites (up to 2 tents) are $40–$48 per night with electric, water, a picnic table and fire ring.</p></div>
+      <div class="q"><h3>Are dogs allowed?</h3><p>No. Caffrey Recreation Area does not allow pets.</p></div>
+      <div class="q"><h3>What's the cancellation policy?</h3><p>Cancel 15+ days before arrival for a refund minus $25. Within 14 days, the deposit is forfeited.</p></div>
+      <div class="q"><h3>How do I get there?</h3><p>431 Lakeshore Drive, Lakeville, PA 18438 — off Route 590 on the lake's west shore in Wayne County.</p></div>
+    </div>
+  </section>
+
+  <section class="near">
+    <div class="tile"><span class="pill">Next door</span><h3>Capri Marina</h3><p>Chaparral boat sales, slips and service on the same shoreline. One stop for your boat and your campsite.</p></div>
+    <div class="tile" style="background:linear-gradient(135deg,#13282c,#1c3d3a)"><span class="pill">Camp store</span><h3>Forgot something?</h3><p>Bait, tackle, firewood, ice, camp basics — and ice cream for the kids (and you).</p></div>
+  </section>
+</main>
+
+<footer><div class="wrap">© Caffrey Recreation LLC · 431 Lakeshore Dr, Lakeville, PA 18438 · <a href="tel:+15702264608">(570) 226-4608</a> · <a href="mailto:Reservations@caffreyrecreation.com">Reservations@caffreyrecreation.com</a></div></footer>
+
+<script>
+// Rates from caffreyrecreation.com/regular-camping-rates
+const R={rv:{reg:52,wkd:58,hol:65},tent:{reg:40,wkd:46,hol:48}};
+const st={type:'rv',reg:0,wkd:2,hol:0,guests:4,boat:false};
+const lim={reg:[0,30],wkd:[0,10],hol:[0,5],guests:[1,8]};
+function calc(){
+  const r=R[st.type],n=st.reg+st.wkd+st.hol;
+  const extra=Math.max(0,st.guests-4)*10*n;
+  const t=st.reg*r.reg+st.wkd*r.wkd+st.hol*r.hol+extra+(st.boat&&n?10:0);
+  const dep=st.hol?3*r.hol:(n?(st.wkd?r.wkd:r.reg):0);
+  total.textContent='$'+t;document.getElementById('dep').textContent='$'+dep;
+  cta.href='mailto:Reservations@caffreyrecreation.com?subject='+encodeURIComponent(`Reservation request: ${st.type==='rv'?'RV':'Tent'} site, ${n} nights, ${st.guests} guests${st.boat?', with boat':''}`);
+}
+document.querySelectorAll('.step').forEach(s=>{
+  const k=s.dataset.k,[dn,up]=s.querySelectorAll('button'),b=s.querySelector('b');
+  const set=v=>{st[k]=Math.min(lim[k][1],Math.max(lim[k][0],v));b.textContent=st[k];calc()};
+  dn.onclick=()=>set(st[k]-1);up.onclick=()=>set(st[k]+1);
+});
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.seg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');st.type=b.dataset.type;calc()});
+boat.onclick=()=>{st.boat=!st.boat;boat.classList.toggle('on',st.boat);calc()};
+calc();
+// Hours: Sun 9-5, Mon-Wed closed, Thu 9-5, Fri-Sat 9-6
+const H=[[9,17],null,null,null,[9,17],[9,18],[9,18]],names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60,today=H[d];
+const open=today&&h>=today[0]&&h<today[1];
+document.getElementById('dot').classList.toggle('open',!!open);
+statusText.textContent=open?`Open now · until ${today[1]-12} PM`:'Closed now · call (570) 226-4608';
+days.innerHTML=names.map((n,i)=>`<div class="${H[i]?'':'closed'} ${i===d?'today':''}"><b>${n}</b>${H[i]?`${H[i][0]}–${H[i][1]-12}`:'Closed'}</div>`).join('');
+</script>
+</body>
+</html>
