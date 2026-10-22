@@ -1,0 +1,45 @@
+[
+  {
+    "id": "rates",
+    "title": "Rates & reservations",
+    "items": [
+      {"home": true, "q": "How much does camping cost at Caffrey Recreation Area?", "a": "RV and trailer sites are $52 per night regular, $58 weekend and $65 holiday. Tent sites are $40 regular, $46 weekend and $48 holiday. Every rate includes up to 4 people."},
+      {"q": "How much are extra guests?", "a": "Up to 4 additional guests can stay for $10 per guest per night, for a maximum of 8 guests per site. Children under 5 stay free."},
+      {"home": true, "q": "How do I make a reservation?", "a": "Call (570) 226-4608 or email Reservations@caffreyrecreation.com with your dates, site type and number of guests. A deposit holds your site."},
+      {"q": "How much is the deposit?", "a": "Non-holiday reservations need a one-night deposit per site. Holiday reservations need a three-night deposit per site."},
+      {"q": "What is the cancellation policy?", "a": "Cancel 15 or more days before arrival for a refund minus a $25 administration fee. Cancellations within 14 days forfeit the deposit. There are no refunds for weather or early departures."},
+      {"q": "Will my price change if rates go up?", "a": "No. Reservations made before a price change keep their original price."}
+    ]
+  },
+  {
+    "id": "sites",
+    "title": "Sites & amenities",
+    "items": [
+      {"home": true, "q": "Are the campsites on the water?", "a": "Yes. Caffrey has 29 campsites along the west shoreline of Lake Wallenpaupack, plus a waterfront picnic area."},
+      {"q": "What hookups do the sites have?", "a": "Every site has 30 amp electric and water, a picnic table and a fire ring. RV and trailer campers also get access to the dump station."},
+      {"q": "Can I bring a tent?", "a": "Yes. Tent sites allow up to 2 tents per site and include electric, water, a picnic table and a fire ring."},
+      {"q": "Are there showers and laundry?", "a": "Yes. There are restrooms with hot showers and on-site laundry facilities."},
+      {"q": "What does the camp store sell?", "a": "Basic camping and fishing supplies, bait, firewood, ice, cold drinks, snacks and ice cream."},
+      {"home": true, "q": "Are pets allowed?", "a": "No. Pets are not allowed at Caffrey Recreation Area."}
+    ]
+  },
+  {
+    "id": "boating",
+    "title": "Boating",
+    "items": [
+      {"home": true, "q": "Can I launch my boat at the campground?", "a": "Yes. Campers can store and launch a boat for $10 for their entire stay."},
+      {"q": "Is there gas for boats?", "a": "Yes. Caffrey has an on-site gas dock on Lake Wallenpaupack."},
+      {"q": "Where can I buy or service a boat nearby?", "a": "Capri Marina, an authorized Chaparral boat dealer and Caffrey's marina partner, handles boat sales and service."}
+    ]
+  },
+  {
+    "id": "visit",
+    "title": "Getting here & hours",
+    "items": [
+      {"home": true, "q": "Where is Caffrey Recreation Area?", "a": "431 Lakeshore Drive, Lakeville, PA 18438, on the west shore of Lake Wallenpaupack in Wayne County, off Route 590 in the Pocono Mountains."},
+      {"q": "What are the office and store hours?", "a": "Thursday and Sunday 9 AM to 5 PM, Friday and Saturday 9 AM to 6 PM, closed Monday through Wednesday. Call ahead if bad weather is expected."},
+      {"q": "When is the camping season?", "a": "The season generally runs from late spring through mid-October. Call (570) 226-4608 to confirm this year's opening and closing dates."},
+      {"q": "How far is Lake Wallenpaupack from New York City and Philadelphia?", "a": "Lake Wallenpaupack is roughly a 2 to 2.5 hour drive from New York City and about 2.5 hours from Philadelphia, depending on traffic."}
+    ]
+  }
+]

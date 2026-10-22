@@ -1,0 +1,48 @@
+
+<div class="wrap page-hero">
+  {{crumbs}}
+  <span class="eyebrow">Contact &amp; directions</span>
+  <h1>Reserve your site.</h1>
+  <p class="answer" style="margin-top:22px">To reserve at Caffrey Recreation Area, call {{phone}} or email {{email}}. The campground is at {{street}}, {{city}}, {{region}} {{zip}}, on the west shore of Lake Wallenpaupack.</p>
+</div>
+
+<section style="padding-top:40px">
+  <div class="wrap grid2">
+    <div class="tile" style="padding:30px">
+      <h2 style="font-size:26px;margin-bottom:6px">Request a reservation</h2>
+      <p class="muted" style="font-size:14px;margin-bottom:18px">This opens a pre-filled email to our reservations desk. We'll reply to confirm availability and your deposit.</p>
+      <form class="form" data-contact>
+        <div class="two"><label>Name<input name="name" required autocomplete="name"></label><label>Phone<input name="phone" type="tel" autocomplete="tel"></label></div>
+        <div class="two"><label>Arrive<input name="arrive" type="date" required></label><label>Depart<input name="depart" type="date" required></label></div>
+        <div class="two">
+          <label>Site type<select name="site"><option>RV / Trailer</option><option>Tent</option></select></label>
+          <label>Guests<select name="guests"><option>1–4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+        </div>
+        <label>Anything else? (boat, holiday, questions)<textarea name="message"></textarea></label>
+        <button class="btn" type="submit">Send request</button>
+      </form>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <a class="tile card" href="tel:{{tel}}" style="text-decoration:none;display:flex;gap:16px;align-items:center"><div class="ic">{{icon:phone}}</div><div><h3 style="margin:0">{{phone}}</h3><p style="font-size:14px">Fastest way to book</p></div></a>
+      <a class="tile card" href="mailto:{{email}}" style="text-decoration:none;display:flex;gap:16px;align-items:center"><div class="ic">{{icon:mail}}</div><div><h3 style="margin:0;font-size:17px;word-break:break-all">{{email}}</h3><p style="font-size:14px">Reservations &amp; questions</p></div></a>
+      <div class="tile card" style="display:flex;gap:16px;align-items:center"><div class="ic">{{icon:pin}}</div><div><h3 style="margin:0">{{street}}</h3><p style="font-size:14px">{{city}}, {{region}} {{zip}} · off Route 590</p></div></div>
+      <div class="tile"><h3 style="font-size:14px;color:var(--mute);font-weight:500;margin-bottom:12px">Office &amp; camp store hours</h3><div class="days" data-hours></div><p class="muted" style="font-size:13px;margin-top:10px">Call ahead if bad weather is expected.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="directions" style="padding-top:0">
+  <div class="wrap grid2">
+    <div class="map"><iframe title="Map to Caffrey Recreation Area" loading="lazy" src="https://www.google.com/maps?q=431+Lakeshore+Drive,+Lakeville,+PA+18438&amp;output=embed"></iframe></div>
+    <div class="tile" style="padding:30px">
+      <span class="eyebrow">Directions</span>
+      <h2 style="font-size:28px;margin-bottom:10px">Finding us</h2>
+      <dl class="policy">
+        <dt>GPS address</dt><dd>431 Lakeshore Drive, Lakeville, PA 18438. Use 18438, because some apps list a different ZIP.</dd>
+        <dt>Last few miles</dt><dd>The campground is off Route 590 on the west shore of Lake Wallenpaupack in Wayne County. Lakeshore Drive runs along the water.</dd>
+        <dt>Coming from NYC, NJ or Philly?</dt><dd>Most routes reach the lake via I-84. Allow about 2–2.5 hours from New York City and 2.5 hours from Philadelphia.</dd>
+      </dl>
+      <div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=431+Lakeshore+Drive+Lakeville+PA+18438" rel="noopener">Open in Google Maps</a></div>
+    </div>
+  </div>
+</section>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://caffreyrecreation.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://caffreyrecreation.com/camping/</loc><priority>0.9</priority></url>
-  <url><loc>https://caffreyrecreation.com/rates/</loc><priority>0.9</priority></url>
-  <url><loc>https://caffreyrecreation.com/boating/</loc><priority>0.8</priority></url>
-  <url><loc>https://caffreyrecreation.com/faq/</loc><priority>0.8</priority></url>
-  <url><loc>https://caffreyrecreation.com/lake-wallenpaupack-guide/</loc><priority>0.7</priority></url>
-  <url><loc>https://caffreyrecreation.com/contact/</loc><priority>0.6</priority></url>
+  <url><loc>https://caffreyrecreation.com/</loc></url>
+  <url><loc>https://caffreyrecreation.com/camping/</loc></url>
+  <url><loc>https://caffreyrecreation.com/rates/</loc></url>
+  <url><loc>https://caffreyrecreation.com/boating/</loc></url>
+  <url><loc>https://caffreyrecreation.com/lake-wallenpaupack-guide/</loc></url>
+  <url><loc>https://caffreyrecreation.com/faq/</loc></url>
+  <url><loc>https://caffreyrecreation.com/contact/</loc></url>
 </urlset>

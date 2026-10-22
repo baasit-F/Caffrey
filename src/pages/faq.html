@@ -1,0 +1,28 @@
+
+<div class="wrap page-hero">
+  {{crumbs}}
+  <span class="eyebrow">FAQ</span>
+  <h1>Questions, answered.</h1>
+  <p class="lead">Everything campers ask about rates, reservations, boating and getting to Caffrey. Still stuck? Call {{phone}}.</p>
+  <div class="btns">
+    <a class="btn alt" href="#rates">Rates &amp; reservations</a>
+    <a class="btn alt" href="#sites">Sites &amp; amenities</a>
+    <a class="btn alt" href="#boating">Boating</a>
+    <a class="btn alt" href="#visit">Getting here</a>
+  </div>
+</div>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    {{faq:all}}
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="band">
+      <div><span class="eyebrow">Didn't see your question?</span><h2>We're happy to help.</h2></div>
+      <div class="btns" style="margin:0"><a class="btn" href="tel:{{tel}}">Call {{phone}}</a><a class="btn alt" href="mailto:{{email}}">Email us</a></div>
+    </div>
+  </div>
+</section>

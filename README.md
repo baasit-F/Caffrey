@@ -1,16 +1,40 @@
-# Caffrey Recreation Area — Website Redesign
+# Caffrey Recreation Area — Website
 
-Redesign concepts and SEO/AEO groundwork for [caffreyrecreation.com](https://caffreyrecreation.com/).
+New site for [caffreyrecreation.com](https://caffreyrecreation.com/), built from Concept C ("Trip Planner").
 
-- `index.html` — gallery of the three concepts
-- `concepts/a-lakeside-editorial.html` — photo-led, premium editorial
-- `concepts/b-retro-camp-poster.html` — illustrated retro poster + clickable site map
-- `concepts/c-trip-planner.html` — app-style bento with live price calculator and open-now status
-- `SEO-AEO-PLAN.md` — search + AI answer-engine strategy
-- `robots.txt`, `sitemap.xml`, `llms.txt` — launch-ready SEO files
+## Pages
+| URL | Source |
+|---|---|
+| `/` | `src/pages/home.html`, with the trip calculator and quick answers |
+| `/camping/` | `src/pages/camping.html` |
+| `/rates/` | `src/pages/rates.html` |
+| `/boating/` | `src/pages/boating.html` |
+| `/lake-wallenpaupack-guide/` | `src/pages/guide.html` |
+| `/faq/` | `src/pages/faq.html` (questions come from `src/faq.json`) |
+| `/contact/` | `src/pages/contact.html` |
 
-Preview locally:
+## Editing
+Edit files in `src/`, then rebuild:
 
+```bash
+python3 build.py
+```
+
+`build.py` wraps each page with the shared header and footer. It also adds the title, meta and Open Graph tags, the JSON-LD schema (Campground/LocalBusiness, FAQPage, BreadcrumbList), and regenerates `sitemap.xml`. Business details such as phone and address live in `BUSINESS` at the top of `build.py`. Styles are in `assets/css/site.css` and behavior (calculator, hours, menu) in `assets/js/site.js`.
+
+## Preview
 ```bash
 python3 -m http.server 4321
 ```
+
+## Also here
+- `concepts/`: the original three design directions (A, B, C)
+- `mockups/`: desktop and phone screenshots for the pitch deck
+- `SEO-AEO-PLAN.md`: search and AI-answer strategy
+- `robots.txt`, `llms.txt`
+
+## Confirm with the client before launch
+- Season open/close dates, and the full campground rules
+- Lake facts on the guide page (acreage, shoreline, fish species, drive times)
+- Capri Marina relationship and wording
+- ZIP 18438 (some directories list 18348)
