@@ -230,7 +230,7 @@ FOOTER = f"""</main>
         <p class="muted" style="margin-top:12px;max-width:320px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="/lake-wallenpaupack-guide/">Lake Wallenpaupack guide</a></li><li><a href="/boating/#capri-marina">Capri Marina</a></li><li><a href="/contact/#directions">Directions</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="/lake-wallenpaupack-guide/">Lake Wallenpaupack guide</a></li><li><a href="/boating/#capri-marine">Capri Marine</a></li><li><a href="/contact/#directions">Directions</a></li></ul></div>
       <div><h4>Contact</h4><ul>
         <li><a href="tel:{BUSINESS['tel']}">{BUSINESS['phone']}</a></li>
         <li><a href="mailto:{BUSINESS['email']}">{BUSINESS['email']}</a></li>

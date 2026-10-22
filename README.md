@@ -28,7 +28,7 @@ python3 -m http.server 4321
 ```
 
 ## Also here
-- `concepts/`: the original three design directions (A, B, C)
+- `concepts/`: the original three design directions (A, B, C), plus `concepts/capri-marine/`, the companion concept for Capri Marine next door
 - `mockups/`: desktop and phone screenshots for the pitch deck
 - `SEO-AEO-PLAN.md`: search and AI-answer strategy
 - `robots.txt`, `llms.txt`
@@ -36,5 +36,5 @@ python3 -m http.server 4321
 ## Confirm with the client before launch
 - Season open/close dates, and the full campground rules
 - Lake facts on the guide page (acreage, shoreline, fish species, drive times)
-- Capri Marina relationship and wording
+- Capri Marine relationship and wording
 - ZIP 18438 (some directories list 18348)

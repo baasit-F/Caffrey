@@ -6,7 +6,7 @@
 - 4 pages, almost no text. The homepage is hours plus a photo gallery, so there's little for Google or an AI to read or quote.
 - No structured data (schema), no meta descriptions, and no FAQ.
 - The address appears only on the Contact page. There's no map, directions or embedded hours schema.
-- The "Capri Marina" link points to an external Chaparral page, so link value leaves the site.
+- The "Capri Marine" link points to an external Chaparral page, so link value leaves the site.
 - The footer says © 2020, which makes the site look abandoned to both people and crawlers.
 
 ## Target queries
@@ -22,7 +22,7 @@
 - `/` Home
 - `/camping/` Sites and amenities
 - `/rates/` Rates, deposits and policies, all in HTML (no PDFs)
-- `/boating/` Launch, slips, gas dock, plus a link to Capri Marina
+- `/boating/` Launch, slips, gas dock, plus a link to Capri Marine
 - `/faq/` 15–25 Q&As with FAQPage schema
 - `/lake-wallenpaupack-guide/` Things to do, fishing and nearby towns (Hawley, Lakeville). This is the topical-authority page.
 - `/contact/` Map, directions from NYC, NJ and Philly, and hours
@@ -58,4 +58,4 @@
 - Exact season dates for this year
 - Online booking: keep phone/email, or add a booking engine (Campspot, Firefly, Newbook)?
 - Better photography? A drone shoot of the shoreline sites would upgrade concepts A and C a lot.
-- Relationship with Capri Marina: one brand or two? (This affects the joint pitch.)
+- Relationship with Capri Marine: one brand or two? (This affects the joint pitch.)
