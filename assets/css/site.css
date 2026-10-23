@@ -206,7 +206,9 @@ details.qa p{padding:0 0 26px;max-width:780px}
 
 /* full-bleed CTA band */
 .band{position:relative;color:#fff;padding:140px 0;overflow:hidden;background:var(--navy)}
-.band-media{position:absolute;inset:0;background:center/cover;opacity:.45}
+.band-media{position:absolute;inset:0;background:center/cover;opacity:.4}
+.band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,34,49,.85) 0%,rgba(15,34,49,.55) 55%,rgba(15,34,49,.25) 100%)}
+.band>.wrap{z-index:2}
 .band .wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .band .eyebrow{color:var(--sand)}
 .band h2{max-width:640px}

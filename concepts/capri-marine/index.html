@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Boat Sales, Service &amp; Storage on Lake Wallenpaupack | Capri Marine</title>
 <meta name="description" content="Family-owned marina on Lake Wallenpaupack in Lakeville, PA. Avalon and Aura pontoons, Chaparral sport and surf boats, Mercury service, slips, dry stack and winter storage. Call (570) 226-3819.">
 <link rel="canonical" href="https://caprimarine.com/">
+<meta name="theme-color" content="#0B2545">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Capri Marine: Boats, service and storage on Lake Wallenpaupack">
 <meta property="og:description" content="New and pre-owned pontoons and sport boats, factory-authorized service, slips and dry stack storage.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Shares the premium system with the Caffrey site; Capri overrides the palette below -->
+<link rel="stylesheet" href="../../assets/css/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,308 +50,246 @@
 ]}
 </script>
 <style>
-:root{--navy:#0B2545;--navy2:#13315C;--ink:#0E1C2F;--soft:#4A5A70;--mute:#7A8AA0;--paper:#F5F7FA;--white:#FDFEFF;--line:#DDE4EC;--teal:#1FA597;--brass:#D9A441;--sky:#CFE6F2}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-img{max-width:100%;display:block}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.05;letter-spacing:-.02em}
-h2{font-size:clamp(30px,4vw,48px)}
-.eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:12px}
-.lead{font-size:18px;color:var(--soft);max-width:620px;margin-top:14px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font:700 15px "DM Sans",sans-serif;padding:14px 22px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn.brass{background:var(--brass);color:var(--ink)}
-.btn.line{background:transparent;border:1.5px solid currentColor;color:inherit}
-.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
-section{padding:84px 0}
-
-/* header */
-.head{position:sticky;top:0;z-index:20;background:rgba(253,254,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.head .wrap{display:flex;align-items:center;gap:24px;height:72px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 21px "Space Grotesk",sans-serif;color:var(--navy)}
-.logo svg{width:32px;height:32px}
-.menu{display:flex;gap:4px;list-style:none;margin-left:auto}
-.menu a{text-decoration:none;font-size:15px;padding:8px 12px;border-radius:10px;color:var(--soft)}
-.menu a:hover{background:var(--paper);color:var(--ink)}
-.burger{display:none;margin-left:auto;background:var(--paper);border:1px solid var(--line);width:44px;height:44px;border-radius:12px;font-size:20px;cursor:pointer}
-
-/* hero */
-.hero{position:relative;color:#fff;background:var(--navy) url(../../assets/img/photo3.jpg) center 60%/cover;min-height:640px;display:flex;align-items:flex-end}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,37,69,.94) 0%,rgba(11,37,69,.75) 45%,rgba(11,37,69,.15) 100%)}
-.hero .wrap{position:relative;padding-top:90px;padding-bottom:120px}
-.hero .eyebrow{color:var(--brass)}
-.hero h1{font-size:clamp(42px,6.2vw,80px);max-width:780px}
-.hero p{font-size:19px;max-width:560px;margin-top:18px;color:#D8E3F0}
-.brands{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.brands span{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-
-/* pillars */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-70px;position:relative;z-index:2}
-.pillar{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:0 20px 50px rgba(11,37,69,.08);display:flex;flex-direction:column;gap:10px;text-decoration:none}
-.pillar .ic{width:48px;height:48px;border-radius:14px;background:var(--sky);color:var(--navy);display:grid;place-items:center}
-.pillar .ic svg{width:24px;height:24px}
-.pillar h3{font-size:24px;margin-top:6px}
-.pillar p{color:var(--soft);font-size:15px}
-.pillar b{margin-top:auto;color:var(--teal);font-size:14px}
-
+/* Capri palette: deeper harbor navy + brass, on the shared premium system */
+:root{--navy:#0B2545;--navy2:#13315C;--slate:#2F5D8A;--slate2:#244B71;--sand:#D9A441;--mist:#ECEFF3;--paper:#F6F7F9;--line:#DCE2EA}
+.logo small{letter-spacing:.3em}
 /* boat finder */
-.finder{background:var(--navy);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
-.finder .eyebrow{color:var(--brass)}
-.finder p.lead{color:#C4D3E6}
-.q{margin-bottom:22px}
-.q h3{font-size:15px;font-family:"DM Sans";font-weight:700;letter-spacing:.04em;margin-bottom:10px;color:#C4D3E6}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;padding:10px 16px;border-radius:999px;font:500 15px "DM Sans";cursor:pointer}
-.chips button[aria-pressed=true]{background:var(--brass);border-color:var(--brass);color:var(--ink);font-weight:700}
-.match{background:var(--white);color:var(--ink);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;align-self:start}
-.match small{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:700}
-.match h3{font-size:34px}
-.match .why{color:var(--soft)}
-.match ul{list-style:none;display:grid;gap:6px;font-size:15px}
-.match li::before{content:"→ ";color:var(--teal);font-weight:700}
-
-/* service */
-.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.svc div{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px}
-.svc h3{font-size:19px;margin-bottom:6px}
-.svc p{font-size:14px;color:var(--soft)}
-.svc .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.photo{border-radius:24px;min-height:420px;background:center/cover;border:1px solid var(--line)}
-
-/* storage */
-table.cmp{width:100%;border-collapse:collapse;background:var(--white);border-radius:22px;overflow:hidden;border:1px solid var(--line)}
-.cmp th,.cmp td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
-.cmp thead th{background:var(--navy);color:#fff;font-family:"Space Grotesk";font-size:18px}
-.cmp tbody th{font-weight:500;color:var(--soft)}
-.cmp td{text-align:center}
-.yes{color:var(--teal);font-weight:700}
-.no{color:var(--mute)}
-
-/* neighbor */
-.neighbor{background:linear-gradient(120deg,#0D1B1E,#16393A);color:#E9F2EE;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.neighbor .eyebrow{color:#3CC6B4}
-.neighbor p{color:#BFD8D5}
-.neighbor .btn{background:#3CC6B4;color:#0D1B1E}
-.map-strip{display:flex;align-items:center;gap:12px;font-size:14px;color:#BFD8D5}
-.map-strip .pin{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px;flex:1;text-align:center}
-.map-strip .pin b{display:block;color:#fff;font-size:16px}
-
-/* faq + visit */
-details{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:500;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:24px;color:var(--teal)}
-details[open] summary::after{content:"–"}
-details p{padding:0 0 20px;color:var(--soft);max-width:760px}
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:30px}
-.map{border-radius:22px;overflow:hidden;border:1px solid var(--line);min-height:340px}
-.map iframe{width:100%;height:100%;min-height:340px;border:0}
-footer{border-top:1px solid var(--line);padding:40px 0;font-size:14px;color:var(--mute);margin-top:40px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.callbar{display:none}
-
-@media(max-width:960px){
-  .menu{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--white);border-bottom:1px solid var(--line);padding:10px 20px 18px}
-  .menu.open{display:flex}
-  .burger{display:block}
-  .head .btn{display:none}
-  .pillars,.svc{grid-template-columns:1fr 1fr}
-  .finder,.split,.neighbor,.visit{grid-template-columns:1fr}
-  .finder,.neighbor{padding:30px}
-  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(253,254,255,.96);border-top:1px solid var(--line);z-index:30}
-  .callbar .btn{justify-content:center;padding:12px}
-  body{padding-bottom:76px}
-}
-@media(max-width:560px){
-  .pillars,.svc{grid-template-columns:1fr}
-  .hero{min-height:560px}
-  .cmp th,.cmp td{padding:12px 8px;font-size:13px}
-  .cmp thead th{font-size:14px}
-}
+.finder{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
+.q{margin-top:30px}
+.q h3{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:14px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips button{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:12px 18px;font:400 15px var(--sans);cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.chips button:hover{border-color:#fff}
+.chips button[aria-pressed=true]{background:var(--sand);border-color:var(--sand);color:var(--navy)}
+.match{background:var(--white);color:var(--ink);padding:48px;display:flex;flex-direction:column;gap:16px}
+.match small{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.match h3{font-size:clamp(30px,3vw,42px);font-weight:300}
+.match .why{color:var(--soft);font-size:17px}
+.match ul{list-style:none;border-top:1px solid var(--line)}
+.match li{padding:12px 0 12px 28px;border-bottom:1px solid var(--line);position:relative;color:var(--soft)}
+.match li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:6px;border-left:1.5px solid var(--slate);border-bottom:1.5px solid var(--slate);transform:rotate(-45deg)}
+.match .btns{margin-top:auto;padding-top:12px}
+.brands-row{display:flex;gap:56px;justify-content:center;flex-wrap:wrap;margin-top:48px;font:300 clamp(22px,2.4vw,30px) var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--navy)}
+.brands-row span{display:flex;flex-direction:column;align-items:center;gap:6px}
+.brands-row small{font-size:11px;letter-spacing:.22em;color:var(--mute)}
+@media(max-width:1000px){.finder{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.match{padding:28px}.brands-row{gap:28px}}
 </style>
 </head>
-<body>
-<header class="head">
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
   <div class="wrap">
-    <a class="logo" href="#" aria-label="Capri Marine home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0B2545"/><path d="M16 6v16M10 12h12M16 22c-4 0-7-2-8-5M16 22c4 0 7-2 8-5" stroke="#D9A441" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="16" cy="6.5" r="2" fill="#D9A441"/></svg>Capri Marine</a>
-    <ul class="menu" id="menu">
-      <li><a href="#boats">Boats</a></li><li><a href="#service">Service</a></li><li><a href="#storage">Storage</a></li><li><a href="#faq">FAQ</a></li><li><a href="#visit">Visit</a></li>
-    </ul>
-    <a class="btn" href="tel:+15702263819">(570) 226-3819</a>
-    <button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
+    <button class="burger" aria-label="Open menu" aria-controls="menu-panel" aria-expanded="false"><span></span></button>
+    <a class="logo" href="#" aria-label="Capri Marine home"><b>CAPRI</b><small>MARINE · EST. LAKE WALLENPAUPACK</small></a>
+    <div class="head-right">
+      <a class="head-link" href="#boats">Boats</a>
+      <a class="head-link" href="#service">Service</a>
+      <a class="head-link" href="#storage">Storage</a>
+      <a class="btn" href="tel:+15702263819">(570) 226-3819</a>
+    </div>
   </div>
 </header>
-
-<main>
-<section class="hero" aria-label="Welcome">
-  <div class="wrap">
-    <span class="eyebrow">Family owned · Lake Wallenpaupack · 50+ years</span>
-    <h1>Buy it, fix it, keep it on the lake.</h1>
-    <p>Capri Marine is a full-service marina on Lakeshore Drive in Lakeville, PA: new and pre-owned boats, factory-authorized service, slips and storage, all in one place.</p>
-    <div class="btns"><a class="btn brass" href="#boats">Find my boat</a><a class="btn line" href="#service">Book service</a></div>
-    <div class="brands" aria-label="Brands we carry"><span>Avalon Pontoons</span><span>Aura Pontoons</span><span>Chaparral Sport &amp; Surf</span></div>
+<div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="inner">
+    <button class="menu-close" aria-label="Close menu"><span aria-hidden="true">×</span> Close</button>
+    <ul class="menu">
+      <li><a href="#main" aria-current="page">Home</a></li>
+      <li><a href="#boats">Find your boat</a></li>
+      <li><a href="#service">Service center</a></li>
+      <li><a href="#storage">Slips &amp; storage</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#visit">Visit the marina</a></li>
+    </ul>
+    <div class="menu-contact">
+      <div>457 Lakeshore Drive<br>Lakeville, PA 18438</div>
+      <div>Call <a href="tel:+15702263819">(570) 226-3819</a><br>Text <a href="sms:+15704700029">(570) 470-0029</a></div>
+    </div>
   </div>
-</section>
-
-<div class="wrap">
-  <div class="pillars">
-    <a class="pillar" href="#boats"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 17s2 2 5 2 4-2 5-2 2 2 5 2 5-2 5-2"/><path d="M4 14 3 10h18l-2 4"/><path d="M12 10V3l5 5"/></svg></div><h3>Sales</h3><p>New Avalon, Aura and Chaparral models plus a rotating pre-owned lineup.</p><b>Browse boats →</b></a>
-    <a class="pillar" href="#service"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg></div><h3>Service</h3><p>Factory-authorized Mercury and MerCruiser techs, fiberglass, detailing and electronics.</p><b>Request service →</b></a>
-    <a class="pillar" href="#storage"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12"/><path d="M7 21v-8h10v8M7 17h10"/></svg></div><h3>Storage</h3><p>Seasonal slips, dry stack, and dry dock and winter storage on the lake.</p><b>Compare options →</b></a>
-  </div>
+  <div class="menu-photo" style="background-image:url(../../assets/img/photo3.jpg)" role="img" aria-label="Boats in their slips on Lake Wallenpaupack"></div>
 </div>
 
-<section id="boats">
+<main id="main">
+<section class="hero" aria-label="Welcome" style="padding:0">
+  <div class="hero-media" style="background-image:url(../../assets/img/photo3.jpg);background-position:center 65%" role="img" aria-label="Boats in their slips along the marina dock on Lake Wallenpaupack"></div>
   <div class="wrap">
-    <div class="finder">
-      <div>
-        <span class="eyebrow">Boat finder</span>
-        <h2>Three questions to your next boat.</h2>
-        <p class="lead">Tell us how you'll use the lake, and we'll point you to the right line before you visit the showroom.</p>
-        <div style="margin-top:30px" id="quiz">
-          <div class="q"><h3>Who's usually aboard?</h3><div class="chips" data-q="crew"><button type="button" data-v="family" aria-pressed="true">Family &amp; friends</button><button type="button" data-v="couple" aria-pressed="false">Just a couple</button><button type="button" data-v="crowd" aria-pressed="false">Big groups</button></div></div>
-          <div class="q"><h3>What's the perfect day?</h3><div class="chips" data-q="day"><button type="button" data-v="cruise" aria-pressed="true">Cruising &amp; sunsets</button><button type="button" data-v="tow" aria-pressed="false">Tubing &amp; skiing</button><button type="button" data-v="surf" aria-pressed="false">Wakesurfing</button><button type="button" data-v="fish" aria-pressed="false">Fishing</button></div></div>
-          <div class="q"><h3>New or pre-owned?</h3><div class="chips" data-q="cond"><button type="button" data-v="new" aria-pressed="true">New</button><button type="button" data-v="used" aria-pressed="false">Pre-owned</button><button type="button" data-v="either" aria-pressed="false">Open to both</button></div></div>
-        </div>
-      </div>
-      <div class="match" aria-live="polite">
-        <small>Your best match</small>
-        <h3 id="mName">Avalon Luxury Pontoon</h3>
-        <p class="why" id="mWhy">Lots of seating, shade and a smooth ride make it the easy choice for full-boat days and sunset cruises.</p>
-        <ul id="mList"><li>Lounge seating for the whole crew</li><li>Tritoon options for more speed and stability</li><li>Ask about Mercury outboard packages</li></ul>
-        <div class="btns" style="margin-top:10px"><a class="btn" id="mCta" href="tel:+15702263819">Ask about this boat</a><a class="btn line" href="sms:+15704700029">Text us</a></div>
-      </div>
+    <span class="eyebrow">Family owned for 50+ years · Lake Wallenpaupack</span>
+    <h1>Life on the lake, handled.</h1>
+    <p>New and pre-owned boats, factory-authorized service, and slips and storage, all from one marina on Lakeshore Drive.</p>
+    <div class="btns"><a class="btn" href="#boats">Find your boat</a><a class="btn light" href="#service">Book service</a></div>
+  </div>
+  <div class="conditions">
+    <div class="wrap">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 17s2 2 5 2 4-2 5-2 2 2 5 2 5-2 5-2"/><path d="M4 14 3 10h18l-2 4"/><path d="M12 10V3l5 5"/></svg> Avalon · Aura · Chaparral</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg> Mercury &amp; MerCruiser certified</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="5" r="3"/><path d="M12 8v14M5 12H2a10 10 0 0 0 20 0h-3"/></svg> Slips · Dry stack · Winter storage</span>
+      <a class="btn light" href="sms:+15704700029">Text us</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
+</section>
+
+<section>
+  <div class="wrap statement reveal">
+    <span class="eyebrow">Capri Marine</span>
+    <h2>Buy it, fix it and keep it on the lake. For more than fifty years, one family has helped Lake Wallenpaupack <em>get out on the water</em>.</h2>
+    <div class="brands-row" aria-label="Brands we carry">
+      <span>Avalon<small>Luxury pontoons</small></span>
+      <span>Aura<small>Pontoons</small></span>
+      <span>Chaparral<small>Sport &amp; surf</small></span>
     </div>
   </div>
 </section>
 
-<section id="service" style="padding-top:20px">
-  <div class="wrap">
-    <span class="eyebrow">Service center</span>
-    <h2>Factory-authorized. On the water.</h2>
-    <p class="lead">Mercury and MerCruiser certified technicians, right on Lake Wallenpaupack, so you can skip trailering to a shop in town.</p>
-    <div class="svc" style="margin-top:34px">
-      <div><span class="tag">Engines</span><h3>Mercury &amp; MerCruiser</h3><p>Maintenance, diagnostics and factory-authorized repair.</p></div>
-      <div><span class="tag">Repower</span><h3>Repowering</h3><p>New outboard packages to bring an older hull back to life.</p></div>
-      <div><span class="tag">Hull</span><h3>Fiberglass &amp; gel coat</h3><p>Repair and restoration of dings, cracks and fading.</p></div>
-      <div><span class="tag">Finish</span><h3>Detailing center</h3><p>Spring launch prep, mid-season and end-of-season detailing.</p></div>
-      <div><span class="tag">Tech</span><h3>Electronics</h3><p>Fishfinders, GPS, audio and upgrades, installed for you.</p></div>
-      <div><span class="tag">Seasonal</span><h3>Launch &amp; haul-out</h3><p>Spring commissioning and fall winterization.</p></div>
-      <div><span class="tag">Store</span><h3>Ship's store</h3><p>Boating essentials, safety gear and parts.</p></div>
-      <div style="background:var(--navy);color:#fff;border-color:var(--navy)"><span class="tag" style="color:var(--brass)">Book it</span><h3>Request service</h3><p style="color:#C4D3E6">Call (570) 226-3819 or text (570) 470-0029.</p></div>
+<section class="navy" id="boats">
+  <div class="wrap finder reveal">
+    <div>
+      <span class="eyebrow">Boat finder</span>
+      <h2>Three questions to your next boat.</h2>
+      <p class="lead">Tell us how you’ll use the lake, and we’ll point you to the right line before you visit the showroom.</p>
+      <div id="quiz">
+        <div class="q"><h3>Who’s usually aboard?</h3><div class="chips" data-q="crew"><button type="button" data-v="family" aria-pressed="true">Family &amp; friends</button><button type="button" data-v="couple" aria-pressed="false">Just a couple</button><button type="button" data-v="crowd" aria-pressed="false">Big groups</button></div></div>
+        <div class="q"><h3>What’s the perfect day?</h3><div class="chips" data-q="day"><button type="button" data-v="cruise" aria-pressed="true">Cruising &amp; sunsets</button><button type="button" data-v="tow" aria-pressed="false">Tubing &amp; skiing</button><button type="button" data-v="surf" aria-pressed="false">Wakesurfing</button><button type="button" data-v="fish" aria-pressed="false">Fishing</button></div></div>
+        <div class="q"><h3>New or pre-owned?</h3><div class="chips" data-q="cond"><button type="button" data-v="new" aria-pressed="true">New</button><button type="button" data-v="used" aria-pressed="false">Pre-owned</button><button type="button" data-v="either" aria-pressed="false">Open to both</button></div></div>
+      </div>
+    </div>
+    <div class="match" aria-live="polite">
+      <small>Your best match</small>
+      <h3 id="mName">Avalon Luxury Pontoon</h3>
+      <p class="why" id="mWhy">Lots of seating, shade and a smooth ride make it the easy choice for full-boat days and sunset cruises.</p>
+      <ul id="mList"></ul>
+      <div class="btns"><a class="btn" href="tel:+15702263819">Ask about this boat</a><a class="btn alt" href="sms:+15704700029">Text us</a></div>
     </div>
   </div>
 </section>
 
-<section id="storage" style="padding-top:20px">
-  <div class="wrap">
-    <div class="split" style="margin-bottom:34px">
-      <div>
-        <span class="eyebrow">Storage</span>
+<section class="mist" id="service">
+  <div class="wrap editorial reveal">
+    <div class="ed-text">
+      <span class="eyebrow">Service center</span>
+      <h2>Factory-authorized. Right on the water.</h2>
+      <p class="lead">Mercury and MerCruiser certified technicians on Lake Wallenpaupack, so you can skip trailering to a shop in town. Engines, hulls, detailing and electronics, handled in one place.</p>
+      <div class="btns"><a class="btn" href="tel:+15702263819">Book service</a><a class="btn alt" href="sms:+15704700029">Text a question</a></div>
+    </div>
+    <figure class="ed-media"><div style="background-image:url(../../assets/img/photo1.jpg)" role="img" aria-label="Low view along the marina dock"></div><figcaption>On-site service center</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="sec-head"><div><span class="eyebrow">What we do</span><h2>Full service, one marina</h2></div></div>
+    <div class="amen">
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg></div><h3>Engine service</h3><p>Mercury &amp; MerCruiser maintenance, diagnostics and repair.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div><h3>Repowering</h3><p>New outboard packages to bring an older hull back to life.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M2 17s2 2 5 2 4-2 5-2 2 2 5 2 5-2 5-2"/><path d="M4 14 3 10h18l-2 4"/></svg></div><h3>Fiberglass &amp; gel coat</h3><p>Repair and restoration of dings, cracks and fading.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9l-4.7 1.8L12 15.5l-1.8-4.7L5.5 9l4.7-1.3Z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></svg></div><h3>Detailing</h3><p>Spring launch prep, mid-season and end-of-season detailing.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Electronics</h3><p>Fishfinders, GPS, audio and upgrades, installed for you.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="1"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Launch &amp; haul-out</h3><p>Spring commissioning and fall winterization.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M3 9 5 4h14l2 5"/><path d="M4 9v11h16V9"/><path d="M10 20v-6h4v6"/></svg></div><h3>Ship’s store</h3><p>Boating essentials, safety gear and parts.</p></div>
+      <div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path d="M2 17s2 2 5 2 4-2 5-2 2 2 5 2 5-2 5-2"/><path d="M4 14 3 10h18l-2 4"/><path d="M12 10V3l5 5"/></svg></div><h3>Sales</h3><p>New and pre-owned boats, with a lineup that changes all season.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mist" id="storage">
+  <div class="wrap reveal">
+    <div class="editorial flip" style="margin-bottom:64px">
+      <div class="ed-text">
+        <span class="eyebrow">Slips &amp; storage</span>
         <h2>Keep it in the water, or keep it safe for winter.</h2>
         <p class="lead">Seasonal slips for lake regulars, dry stack for launch-on-demand, and dry dock and winter storage when the season ends.</p>
       </div>
-      <div class="photo" style="background-image:url(../../assets/img/photo1.jpg);min-height:300px" role="img" aria-label="Boats in slips along the dock"></div>
+      <figure class="ed-media"><div style="background-image:url(../../assets/img/photo3.jpg);background-position:center 75%" role="img" aria-label="Boats tied up in seasonal slips"></div><figcaption>Seasonal slips</figcaption></figure>
     </div>
-    <p class="eyebrow">Compare storage options (pricing on request)</p>
-    <table class="cmp">
-      <thead><tr><th scope="col"></th><th scope="col">Seasonal slip</th><th scope="col">Dry stack</th><th scope="col">Winter / dry dock</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">Boat stays in the water</th><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td></tr>
-        <tr><th scope="row">We launch it for you</th><td class="no">—</td><td class="yes">Yes</td><td class="no">—</td></tr>
-        <tr><th scope="row">Protected from weather</th><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-        <tr><th scope="row">Best for</th><td>Daily boaters</td><td>Weekend boaters</td><td>Off-season</td></tr>
-      </tbody>
-    </table>
-    <div class="btns"><a class="btn" href="tel:+15702263819">Check slip availability</a></div>
-  </div>
-</section>
-
-<section style="padding-top:20px">
-  <div class="wrap">
-    <div class="neighbor">
-      <div>
-        <span class="eyebrow">Next door on Lakeshore Drive</span>
-        <h2>Bring the boat. Camp at the water.</h2>
-        <p style="margin-top:14px">Caffrey Recreation Area is next door, with 29 lakefront campsites, a boat launch and a gas dock. Buy or service your boat at Capri, then spend the weekend on the water at Caffrey.</p>
-        <div class="btns"><a class="btn" href="https://caffreyrecreation.com/">Plan a stay at Caffrey</a></div>
-      </div>
-      <div class="map-strip" aria-label="Capri Marine and Caffrey are neighbors on Lakeshore Drive">
-        <div class="pin"><b>Capri Marine</b>457 Lakeshore Dr</div>
-        <span aria-hidden="true">⟷</span>
-        <div class="pin"><b>Caffrey</b>431 Lakeshore Dr</div>
-      </div>
+    <div class="tile" style="padding:40px">
+      <p class="eyebrow">Compare storage options · pricing on request</p>
+      <table class="data">
+        <thead><tr><th scope="col">&nbsp;</th><th scope="col">Seasonal slip</th><th scope="col">Dry stack</th><th scope="col">Winter / dry dock</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:16px;font-weight:400">Boat stays in the water</th><td>Yes</td><td>No</td><td>No</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:16px;font-weight:400">We launch it for you</th><td>—</td><td>Yes</td><td>—</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:16px;font-weight:400">Protected from weather</th><td>No</td><td>Yes</td><td>Yes</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:16px;font-weight:400">Best for</th><td>Daily boaters</td><td>Weekend boaters</td><td>Off-season</td></tr>
+        </tbody>
+      </table>
+      <div class="btns"><a class="btn" href="tel:+15702263819">Check slip availability</a></div>
     </div>
   </div>
 </section>
 
-<section id="faq">
-  <div class="wrap">
-    <span class="eyebrow">FAQ</span>
-    <h2>Common questions</h2>
-    <div style="margin-top:20px">
-      <details><summary>What boat brands does Capri Marine sell?</summary><p>Avalon luxury pontoons, Aura pontoons and Chaparral sport and surf boats, plus a pre-owned inventory that changes through the season.</p></details>
-      <details><summary>Do you service Mercury engines?</summary><p>Yes. The service center has factory-authorized Mercury and MerCruiser technicians.</p></details>
-      <details><summary>Can I store my boat over the winter?</summary><p>Yes. We offer winter and dry dock storage, dry stack storage and seasonal boat slips. Call for availability and pricing.</p></details>
-      <details><summary>Do you buy or take trade-ins?</summary><p>Ask our sales team about your current boat when you shop. [Confirm trade-in policy with Capri.]</p></details>
-      <details><summary>Where are you?</summary><p>457 Lakeshore Drive, Lakeville, PA 18438, on Lake Wallenpaupack, next door to Caffrey Recreation Area.</p></details>
-    </div>
+<section>
+  <div class="wrap reveal" style="max-width:980px">
+    <div class="sec-head"><div><span class="eyebrow">Good to know</span><h2>Common questions</h2></div></div>
+    <details class="qa"><summary>What boat brands does Capri Marine sell?</summary><p>Avalon luxury pontoons, Aura pontoons and Chaparral sport and surf boats, plus a pre-owned inventory that changes through the season.</p></details>
+    <details class="qa"><summary>Do you service Mercury engines?</summary><p>Yes. The service center has factory-authorized Mercury and MerCruiser technicians.</p></details>
+    <details class="qa"><summary>Can I store my boat over the winter?</summary><p>Yes. We offer winter and dry dock storage, dry stack storage and seasonal boat slips. Call for availability and pricing.</p></details>
+    <details class="qa"><summary>Do you take trade-ins?</summary><p>Ask our sales team about your current boat when you shop. [Confirm trade-in policy with Capri.]</p></details>
+    <details class="qa"><summary>Where are you?</summary><p>457 Lakeshore Drive, Lakeville, PA 18438, on Lake Wallenpaupack, next door to Caffrey Recreation Area.</p></details>
   </div>
 </section>
 
-<section id="visit" style="padding-top:0">
-  <div class="wrap visit">
-    <div class="card">
+<section class="band" style="padding:150px 0">
+  <div class="band-media" style="background-image:url(../../assets/img/photo1.jpg)"></div>
+  <div class="wrap reveal">
+    <div><span class="eyebrow">Next door on Lakeshore Drive</span><h2>Bring the boat. Camp at the water.</h2><p style="color:rgba(255,255,255,.8);margin-top:18px;max-width:560px;font-weight:300">Caffrey Recreation Area is next door, with 29 lakefront campsites, a boat launch and a gas dock. Buy or service at Capri, then spend the weekend at Caffrey.</p></div>
+    <div class="btns" style="margin:0"><a class="btn alt" href="https://caffreyrecreation.com/">Plan a stay at Caffrey</a></div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap split reveal" style="align-items:stretch">
+    <div class="tile" style="padding:48px">
       <span class="eyebrow">Visit the marina</span>
-      <h2 style="font-size:34px">457 Lakeshore Drive<br>Lakeville, PA 18438</h2>
-      <p class="lead">On the shore of Lake Wallenpaupack, next to Caffrey Recreation Area.</p>
-      <div class="btns"><a class="btn" href="tel:+15702263819">Call (570) 226-3819</a><a class="btn line" href="sms:+15704700029">Text (570) 470-0029</a></div>
-      <p style="margin-top:18px;font-size:14px;color:var(--mute)">Hours: [confirm with Capri]</p>
+      <h2 style="font-size:40px">457 Lakeshore Drive<br>Lakeville, PA 18438</h2>
+      <p class="lead">On the shore of Lake Wallenpaupack, next door to Caffrey Recreation Area.</p>
+      <div class="btns"><a class="btn" href="tel:+15702263819">Call (570) 226-3819</a><a class="btn alt" href="sms:+15704700029">Text (570) 470-0029</a></div>
+      <p style="margin-top:24px;font-size:14px;color:var(--mute)">Hours: [confirm with Capri]</p>
     </div>
     <div class="map"><iframe title="Map to Capri Marine" loading="lazy" src="https://www.google.com/maps?q=457+Lakeshore+Drive,+Lakeville,+PA+18438&amp;output=embed"></iframe></div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Capri Marine · Family owned on Lake Wallenpaupack</span><span>Concept mockup, not affiliated with brand manufacturers</span></div></footer>
-<div class="callbar"><a class="btn line" href="sms:+15704700029" style="color:var(--navy)">Text</a><a class="btn" href="tel:+15702263819">Call</a></div>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a class="logo" href="#"><b>CAPRI</b><small>MARINE</small></a><p style="max-width:340px">Family owned for more than 50 years. Boat sales, service and storage on Lake Wallenpaupack.</p></div>
+      <div><h4>Marina</h4><ul><li><a href="#boats">Find your boat</a></li><li><a href="#service">Service center</a></li><li><a href="#storage">Slips &amp; storage</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Brands</h4><ul><li>Avalon pontoons</li><li>Aura pontoons</li><li>Chaparral sport &amp; surf</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+15702263819">Call (570) 226-3819</a></li><li><a href="sms:+15704700029">Text (570) 470-0029</a></li><li class="muted">457 Lakeshore Drive<br>Lakeville, PA 18438</li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Capri Marine</span><span>Concept mockup, not affiliated with brand manufacturers</span></div>
+  </div>
+</footer>
+<div class="callbar"><a class="btn alt" href="sms:+15704700029">Text</a><a class="btn" href="tel:+15702263819">Call</a></div>
 
+<script src="../../assets/js/site.js" defer></script>
 <script>
-// Burger menu
-const burger=document.querySelector('.burger'),menu=document.getElementById('menu');
-burger.addEventListener('click',()=>burger.setAttribute('aria-expanded',menu.classList.toggle('open')));
-menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
-
 // Boat finder: maps answers to one of the three lines Capri carries
-const st={crew:'family',day:'cruise',cond:'new'};
-const LINES={
-  avalon:{name:'Avalon Luxury Pontoon',why:'Lots of seating, shade and a smooth ride make it the easy choice for full-boat days and sunset cruises.',list:['Lounge seating for the whole crew','Ask about tritoon models','Ask about Mercury outboard packages']},
-  aura:{name:'Aura Pontoon',why:'A practical, comfortable pontoon that\'s easy to own, great for relaxed cruising and fishing.',list:['Easy to handle and dock','Ask which layouts suit fishing','Great first boat for the lake']},
-  chap:{name:'Chaparral Sport Boat',why:'A sporty hull with the power to pull tubes and skiers and still carry the gang.',list:['Built for watersports and speed','Bowrider seating up front','MerCruiser service right here at Capri']},
-  surf:{name:'Chaparral Surf Boat',why:'A purpose-built wake for surfing, with room for friends to watch from the deck.',list:['Shaped wake for surfing','Tower and board racks','Ask about a lake demo']}
+const st = { crew: 'family', day: 'cruise', cond: 'new' };
+const LINES = {
+  avalon: { name: 'Avalon Luxury Pontoon', why: 'Lots of seating, shade and a smooth ride make it the easy choice for full-boat days and sunset cruises.', list: ['Lounge seating for the whole crew', 'Ask about tritoon models', 'Ask about Mercury outboard packages'] },
+  aura: { name: 'Aura Pontoon', why: 'A practical, comfortable pontoon that’s easy to own, great for relaxed cruising and fishing.', list: ['Easy to handle and dock', 'Ask which layouts suit fishing', 'Great first boat for the lake'] },
+  chap: { name: 'Chaparral Sport Boat', why: 'A sporty hull with the power to pull tubes and skiers and still carry the gang.', list: ['Built for watersports and speed', 'Bowrider seating up front', 'MerCruiser service right here at Capri'] },
+  surf: { name: 'Chaparral Surf Boat', why: 'A purpose-built wake for surfing, with room for friends to watch from the deck.', list: ['Shaped wake for surfing', 'Tower and board racks', 'Ask about a lake demo'] }
 };
-function pick(){
-  if(st.day==='surf')return'surf';
-  if(st.day==='tow')return'chap';
-  if(st.day==='fish')return'aura';
-  if(st.crew==='couple')return'aura';
-  return'avalon';
+function pick() {
+  if (st.day === 'surf') return 'surf';
+  if (st.day === 'tow') return 'chap';
+  if (st.day === 'fish') return 'aura';
+  if (st.crew === 'couple') return 'aura';
+  return 'avalon';
 }
-function render(){
-  const l=LINES[pick()],cond={new:'New',used:'Pre-owned',either:'New or pre-owned'}[st.cond];
-  mName.textContent=l.name;mWhy.textContent=l.why;
-  mList.innerHTML=l.list.concat([cond+' inventory available']).map(x=>`<li>${x}</li>`).join('');
+function render() {
+  const l = LINES[pick()], cond = { new: 'New', used: 'Pre-owned', either: 'New or pre-owned' }[st.cond];
+  mName.textContent = l.name; mWhy.textContent = l.why;
+  mList.innerHTML = l.list.concat([cond + ' inventory available']).map(x => `<li>${x}</li>`).join('');
 }
-document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{
-  const b=e.target.closest('button');if(!b)return;
-  g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  st[g.dataset.q]=b.dataset.v;render();
+document.querySelectorAll('.chips').forEach(g => g.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  st[g.dataset.q] = b.dataset.v; render();
 }));
 render();
 </script>
