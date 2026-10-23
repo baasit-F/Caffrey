@@ -4,15 +4,41 @@
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const EMAIL = 'Reservations@caffreyrecreation.com';
 
-  // Header shadow + mobile menu
+  // Header turns solid once the hero scrolls away
   const head = $('.site-head');
-  const onScroll = () => head && head.classList.toggle('scrolled', scrollY > 8);
+  const onScroll = () => head && head.classList.toggle('scrolled', scrollY > 40);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  const burger = $('.burger'), menu = $('.menu');
-  if (burger) burger.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
+
+  // Full-screen menu
+  const burger = $('.burger'), panel = $('.menu-panel');
+  const setMenu = open => {
+    panel.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
     burger.setAttribute('aria-expanded', open);
-  });
+    if (open) $('.menu-close', panel).focus(); else burger.focus();
+  };
+  if (burger && panel) {
+    burger.addEventListener('click', () => setMenu(true));
+    $('.menu-close', panel).addEventListener('click', () => setMenu(false));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && panel.classList.contains('open')) setMenu(false); });
+    $$('.menu a', panel).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  }
+
+  // Fade sections in as they scroll into view
+  const reveals = $$('.reveal');
+  // ?static shows everything at once (used for full-page mockup screenshots)
+  if (!/[?&]static\b/.test(location.search) && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(el => io.observe(el));
+    // Fallback for fast jumps (anchor links, flick scrolls): show anything already reached
+    const catchUp = () => reveals.forEach(el => {
+      if (!el.classList.contains('in') && el.getBoundingClientRect().top < innerHeight) el.classList.add('in');
+    });
+    addEventListener('scroll', catchUp, { passive: true });
+    addEventListener('hashchange', catchUp);
+  } else reveals.forEach(el => el.classList.add('in'));
 
   // Hours: Sun 9-5, Mon-Wed closed, Thu 9-5, Fri-Sat 9-6 (store/office)
   const H = [[9, 17], null, null, null, [9, 17], [9, 18], [9, 18]];

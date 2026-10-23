@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Camping Rates &amp; Policies | Caffrey Recreation Area, Lakeville PA</title>
 <meta name="description" content="RV sites $52–$65, tent sites $40–$48 per night on Lake Wallenpaupack. Deposits, cancellation policy, guest limits and what&#x27;s included.">
@@ -19,20 +20,35 @@
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://caffreyrecreation.com/"}, {"@type": "ListItem", "position": 2, "name": "Rates & Policies", "item": "https://caffreyrecreation.com/rates/"}]}</script>
 </head>
-<body>
+<body class="inner">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Caffrey Recreation Area home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3cc6b4"/><path d="M6 21 13 11l4 5 3-3 6 8Z" fill="#0d1b1e"/><path d="M5 24c3 0 3-1.5 5.5-1.5S13 24 16 24s3-1.5 5.5-1.5S24 24 27 24" stroke="#0d1b1e" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Caffrey<span>.</span></a>
-    <ul class="menu" id="menu"><li><a href="/camping/">Camping</a></li><li><a href="/rates/" aria-current="page">Rates</a></li><li><a href="/boating/">Boating</a></li><li><a href="/lake-wallenpaupack-guide/">Lake Guide</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact</a></li></ul>
-    <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
-    <button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
+    <button class="burger" aria-label="Open menu" aria-controls="menu-panel" aria-expanded="false"><span></span></button>
+    <a class="logo" href="/" aria-label="Caffrey Recreation Area home"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+    <div class="head-right">
+      <a class="head-link" href="/rates/">Rates</a>
+      <a class="head-link" href="/boating/">Boating</a>
+      <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
+      <a class="btn" href="/#plan">Plan your stay</a>
+    </div>
   </div>
 </header>
+<div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="inner">
+    <button class="menu-close" aria-label="Close menu"><span aria-hidden="true">×</span> Close</button>
+    <ul class="menu"><li><a href="/">Home</a></li><li><a href="/camping/">Camping</a></li><li><a href="/rates/" aria-current="page">Rates</a></li><li><a href="/boating/">Boating</a></li><li><a href="/lake-wallenpaupack-guide/">Lake Guide</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact</a></li></ul>
+    <div class="menu-contact">
+      <div>431 Lakeshore Drive<br>Lakeville, PA 18438</div>
+      <div><a href="tel:+15702264608">(570) 226-4608</a><br><a href="mailto:Reservations@caffreyrecreation.com">Email reservations</a></div>
+    </div>
+  </div>
+  <div class="menu-photo" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The Caffrey dock on Lake Wallenpaupack"></div>
+</div>
 <main id="main">
 <div class="wrap page-hero">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Rates &amp; Policies</nav>
@@ -66,10 +82,10 @@
         <caption class="muted" style="text-align:left;font-size:13px;padding-bottom:8px">Per site, per night, USD. Includes up to 4 guests.</caption>
         <thead><tr><th scope="col">Site type</th><th scope="col">Regular</th><th scope="col">Weekend</th><th scope="col">Holiday</th></tr></thead>
         <tbody>
-          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--text)">RV / Trailer</th><td>$52</td><td>$58</td><td>$65</td></tr>
-          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--text)">Tent (2 tents max)</th><td>$40</td><td>$46</td><td>$48</td></tr>
-          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--text)">Extra guest (5th–8th)</th><td>$10</td><td>$10</td><td>$10</td></tr>
-          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--text)">Boat storage &amp; launch</th><td colspan="3">$10 per stay</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink)">RV / Trailer</th><td>$52</td><td>$58</td><td>$65</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink)">Tent (2 tents max)</th><td>$40</td><td>$46</td><td>$48</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink)">Extra guest (5th–8th)</th><td>$10</td><td>$10</td><td>$10</td></tr>
+          <tr><th scope="row" style="text-transform:none;letter-spacing:0;font-size:15px;color:var(--ink)">Boat storage &amp; launch</th><td colspan="3">$10 per stay</td></tr>
         </tbody>
       </table>
       <p class="muted" style="font-size:13px;margin-top:12px">Children under 5 stay free. If rates change, reservations made before the change keep their original price.</p>
@@ -113,8 +129,8 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3cc6b4"/><path d="M6 21 13 11l4 5 3-3 6 8Z" fill="#0d1b1e"/><path d="M5 24c3 0 3-1.5 5.5-1.5S13 24 16 24s3-1.5 5.5-1.5S24 24 27 24" stroke="#0d1b1e" stroke-width="2" fill="none" stroke-linecap="round"/></svg>Caffrey<span>.</span></a>
-        <p class="muted" style="margin-top:12px;max-width:320px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
+        <a class="logo" href="/"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+        <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
       <div><h4>Explore</h4><ul><li><a href="/lake-wallenpaupack-guide/">Lake Wallenpaupack guide</a></li><li><a href="/boating/#capri-marine">Capri Marine</a></li><li><a href="/contact/#directions">Directions</a></li></ul></div>
@@ -122,12 +138,13 @@
         <li><a href="tel:+15702264608">(570) 226-4608</a></li>
         <li><a href="mailto:Reservations@caffreyrecreation.com">Reservations@caffreyrecreation.com</a></li>
         <li class="muted">431 Lakeshore Drive<br>Lakeville, PA 18438</li>
+        <li><span class="muted" style="font-size:13px">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</span></li>
       </ul></div>
     </div>
     <div class="legal"><span>© <span data-year>2026</span> Caffrey Recreation LLC</span><span>No pets · Max 8 guests per site</span></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn alt" href="tel:+15702264608">Call</a><a class="btn" href="/#plan">Price my trip</a></div>
+<div class="callbar"><a class="btn alt" href="tel:+15702264608">Call</a><a class="btn" href="/#plan">Plan your stay</a></div>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

@@ -173,6 +173,7 @@ def head(page, schemas):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{html.escape(page['title'])}</title>
 <meta name="description" content="{html.escape(page['desc'])}">
@@ -190,28 +191,45 @@ def head(page, schemas):
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 {ld}
 </head>
-<body>
+<body class="{'home' if page['src'] == 'home' else 'inner'}">
 <a class="skip" href="#main">Skip to content</a>"""
 
 
 def header(page):
     current = ' aria-current="page"'
-    links = "".join(
+    home = ' aria-current="page"' if page["src"] == "home" else ""
+    links = f'<li><a href="/"{home}>Home</a></li>' + "".join(
         f'<li><a href="{href}"{current if page["nav"] == key else ""}>{label}</a></li>'
         for key, label, href in NAV)
+    b = BUSINESS
     return f"""
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Caffrey Recreation Area home">{LOGO}Caffrey<span>.</span></a>
-    <ul class="menu" id="menu">{links}</ul>
-    <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
-    <button class="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
+    <button class="burger" aria-label="Open menu" aria-controls="menu-panel" aria-expanded="false"><span></span></button>
+    <a class="logo" href="/" aria-label="Caffrey Recreation Area home"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+    <div class="head-right">
+      <a class="head-link" href="/rates/">Rates</a>
+      <a class="head-link" href="/boating/">Boating</a>
+      <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
+      <a class="btn" href="/#plan">Plan your stay</a>
+    </div>
   </div>
 </header>
+<div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="inner">
+    <button class="menu-close" aria-label="Close menu"><span aria-hidden="true">×</span> Close</button>
+    <ul class="menu">{links}</ul>
+    <div class="menu-contact">
+      <div>{b['street']}<br>{b['city']}, {b['region']} {b['zip']}</div>
+      <div><a href="tel:{b['tel']}">{b['phone']}</a><br><a href="mailto:{b['email']}">Email reservations</a></div>
+    </div>
+  </div>
+  <div class="menu-photo" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The Caffrey dock on Lake Wallenpaupack"></div>
+</div>
 <main id="main">"""
 
 
@@ -226,8 +244,8 @@ FOOTER = f"""</main>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/">{LOGO}Caffrey<span>.</span></a>
-        <p class="muted" style="margin-top:12px;max-width:320px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
+        <a class="logo" href="/"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+        <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
       <div><h4>Explore</h4><ul><li><a href="/lake-wallenpaupack-guide/">Lake Wallenpaupack guide</a></li><li><a href="/boating/#capri-marine">Capri Marine</a></li><li><a href="/contact/#directions">Directions</a></li></ul></div>
@@ -235,12 +253,13 @@ FOOTER = f"""</main>
         <li><a href="tel:{BUSINESS['tel']}">{BUSINESS['phone']}</a></li>
         <li><a href="mailto:{BUSINESS['email']}">{BUSINESS['email']}</a></li>
         <li class="muted">{BUSINESS['street']}<br>{BUSINESS['city']}, {BUSINESS['region']} {BUSINESS['zip']}</li>
+        <li><span class="muted" style="font-size:13px">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</span></li>
       </ul></div>
     </div>
     <div class="legal"><span>© <span data-year>2026</span> {BUSINESS['legal']}</span><span>No pets · Max 8 guests per site</span></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#plan">Price my trip</a></div>
+<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#plan">Plan your stay</a></div>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

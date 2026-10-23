@@ -66,7 +66,8 @@ def main():
     shutil.copytree(ROOT / "assets", OUT / "assets")
     for src, dst in PAGES.items():
         html = strip_capri(relink((ROOT / src).read_text()))
-        html = html.replace('<a class="skip"', BANNER + '\n<a class="skip"', 1)
+        # Inside the header, so the fixed/sticky header carries it on every page
+        html = html.replace('<header class="site-head">', '<header class="site-head">\n' + BANNER, 1)
         html = html.replace('<meta name="viewport"', '<meta name="robots" content="noindex">\n<meta name="viewport"', 1)
         (OUT / dst).write_text(html)
 
