@@ -1,134 +1,201 @@
 
-<section class="hero" aria-label="Welcome" style="padding:0">
-  <div class="hero-media" style="background-image:url(/assets/img/photo3.jpg)" role="img" aria-label="The Caffrey dock stretching into Lake Wallenpaupack"></div>
+<div class="hero" style="background-image:url(/assets/img/photo3.jpg);background-position:center 60%" role="img" aria-label="The Caffrey dock stretching into Lake Wallenpaupack">
+  <p class="hero-tag">Twenty-nine lakefront campsites on the quiet west shore of Lake Wallenpaupack.</p>
+</div>
+
+<form class="book-bar" id="book" data-book onsubmit="return false" aria-label="Check availability">
+  <div>
+    <label for="bk-site">I want to stay in</label>
+    <select id="bk-site" name="site"><option value="rv">RV / Trailer site</option><option value="tent">Tent site</option></select>
+    <label class="boat" style="margin:10px 0 0"><input type="checkbox" name="boat"> Bringing a boat ($10 / stay)</label>
+  </div>
+  <div>
+    <span class="lbl">During</span>
+    <div class="pair">
+      <input type="date" name="arrive" aria-label="Arrive">
+      <input type="date" name="depart" aria-label="Depart">
+    </div>
+  </div>
+  <div>
+    <span class="lbl">With</span>
+    <div class="count" data-count-of="adults"><button type="button" aria-label="Fewer adults">−</button><span>2 Adults</span><button type="button" aria-label="More adults">+</button></div>
+    <div class="count" data-count-of="kids"><button type="button" aria-label="Fewer kids under 5">−</button><span>0 Kids</span><button type="button" aria-label="More kids under 5">+</button></div>
+  </div>
+  <div class="side">
+    <a class="btn" data-request href="mailto:{{email}}">Check availability</a>
+  </div>
+  <div class="estimate" data-est aria-live="polite"></div>
+</form>
+
+<section class="intro">
+  <div class="wrap reveal">
+    <h1 style="font-size:clamp(40px,5.6vw,76px);max-width:860px">Where the campsite meets the shoreline.</h1>
+    <div class="two-col">
+      <div>
+        <h3>Lakefront Sites.</h3>
+        <p>Twenty-nine campsites strung along the west shore of Lake Wallenpaupack, one of Pennsylvania’s largest lakes. Every one has 30 amp electric, water, a picnic table and a fire ring. Small on purpose, and family-run.</p>
+        <a class="tlink" href="/camping/">View campsites</a>
+      </div>
+      <div>
+        <h3>Bring the Boat.</h3>
+        <p>Launch and store your boat for $10 for the whole stay, fuel up at the on-site gas dock, and grab bait, ice and firewood at the camp store. Your boat ties up a short walk from your fire ring.</p>
+        <a class="tlink" href="/boating/">Boating details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="slider" data-slider aria-roledescription="carousel" aria-label="Ways to stay">
+      <div class="slide slide-ways on">
+        <div class="ph" style="background-image:url(/assets/img/photo3.jpg)" role="img" aria-label="Boats and the main dock on Lake Wallenpaupack"></div>
+        <div class="panel">
+          <span class="price-tag">From $52 / night</span>
+          <h3>RV &amp; Trailer Sites</h3>
+          <p>Pull in close to the water with 30 amp electric, water and dump station access. Weekend nights are $58, holidays $65.</p>
+          <a class="btn" href="/rates/#rv">See rates</a>
+          <a class="btn" href="#book">Check availability</a>
+        </div>
+      </div>
+      <div class="slide slide-ways">
+        <div class="ph" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="Low view along the wooden dock"></div>
+        <div class="panel">
+          <span class="price-tag">From $40 / night</span>
+          <h3>Tent Sites</h3>
+          <p>Room for up to two tents, with electric and water at the site, a fire ring, and hot showers nearby. Weekend nights are $46.</p>
+          <a class="btn" href="/rates/#tent">See rates</a>
+          <a class="btn" href="#book">Check availability</a>
+        </div>
+      </div>
+      <div class="slide slide-ways">
+        <div class="ph" style="background-image:url(/assets/img/photo3.jpg);background-position:center 80%" role="img" aria-label="Boats in their slips"></div>
+        <div class="panel">
+          <span class="price-tag">$10 / whole stay</span>
+          <h3>Boat &amp; Stay</h3>
+          <p>Bring the boat and keep it close. One flat fee covers launching and storage for your entire stay, plus an on-site gas dock.</p>
+          <a class="btn" href="/boating/">Boating</a>
+          <a class="btn" href="#book">Check availability</a>
+        </div>
+      </div>
+      <div class="slider-nav"><span>Ways to stay</span><div class="arrows"><button type="button" data-prev aria-label="Previous">←</button><span data-count>1 / 3</span><button type="button" data-next aria-label="Next">→</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap reveal">
+    <div class="slider max" data-slider aria-roledescription="carousel" aria-label="Around camp">
+      <div class="slide slide-camp on">
+        <div class="panel"><h3>Camp Store</h3><p>Bait, tackle, camping basics, firewood, ice, cold drinks, snacks and ice cream, steps from your site.</p></div>
+        <div class="ph" style="background-image:url(/assets/img/photo2.jpg)" role="img" aria-label="The Caffrey camp store with its porch, laundry and firewood"></div>
+      </div>
+      <div class="slide slide-camp">
+        <div class="panel"><h3>Gas Dock</h3><p>Fuel up on the water without trailering out. Then head straight back to the open lake.</p></div>
+        <div class="ph" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The Caffrey dock"></div>
+      </div>
+      <div class="slide slide-camp">
+        <div class="panel"><h3>Waterfront Picnic</h3><p>Shared tables right on the shoreline, with sunsets over the water from the west shore.</p></div>
+        <div class="ph" style="background-image:url(/assets/img/photo3.jpg);background-position:center 30%" role="img" aria-label="Lake Wallenpaupack and the ridge beyond"></div>
+      </div>
+      <div class="slide slide-camp">
+        <div class="panel"><h3>Showers &amp; Laundry</h3><p>Clean restrooms with hot showers, plus on-site laundry for longer stays.</p></div>
+        <div class="ph" style="background-image:url(/assets/img/photo2.jpg);background-position:20% 60%" role="img" aria-label="The laundry building beside the camp store"></div>
+      </div>
+      <div class="slider-nav"><span>Around camp</span><div class="arrows"><button type="button" data-prev aria-label="Previous">←</button><span data-count>1 / 4</span><button type="button" data-next aria-label="Next">→</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap three reveal">
+    <div>
+      <h3>Fishing on Wallenpaupack</h3>
+      <div class="ph" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The dock at Caffrey"></div>
+      <p>Bass, striped bass, walleye and perch. Pick up bait at the camp store and be on the water at first light.</p>
+      <a class="tlink" href="/lake-wallenpaupack-guide/">Lake guide</a>
+    </div>
+    <div>
+      <h3>Rates &amp; Holiday Weekends</h3>
+      <div class="ph" style="background-image:url(/assets/img/photo3.jpg)" role="img" aria-label="Boats on Lake Wallenpaupack"></div>
+      <p>Simple nightly pricing with 4 guests included. Holiday weekends book first, so plan ahead.</p>
+      <a class="tlink" href="/rates/">View all rates</a>
+    </div>
+    <div>
+      <h3>The Camp Store</h3>
+      <div class="ph" style="background-image:url(/assets/img/photo2.jpg);background-position:60% center" role="img" aria-label="The camp store porch"></div>
+      <p>Forgot something? Firewood, ice, fishing supplies and ice cream are a short walk from your site.</p>
+      <a class="tlink" href="/camping/">Amenities</a>
+    </div>
+  </div>
+</section>
+
+<section class="mist">
+  <div class="wrap mapwrap reveal">
+    <div class="lakemap">
+      <svg viewBox="0 0 600 420" role="img" aria-label="Illustrative map of Lake Wallenpaupack showing Caffrey Recreation Area on the west shore near Lakeville, with Hawley to the north-east">
+        <rect width="600" height="420" fill="#EFE4CB"/>
+        <path d="M60 330 C120 300 150 250 200 235 C250 220 260 190 300 170 C340 150 360 120 410 105 C450 92 480 70 520 60 L530 78 C495 92 470 112 430 128 C385 146 370 178 330 196 C290 214 280 246 230 266 C185 284 150 330 85 352 Z" fill="#9DB9BE" stroke="#3F6E79" stroke-width="2"/>
+        <path d="M20 250 C150 215 260 120 420 70" fill="none" stroke="#8C8272" stroke-width="2" stroke-dasharray="6 6"/>
+        <text x="40" y="236" font-family="DM Mono, monospace" font-size="12" fill="#5A5246">ROUTE 590</text>
+        <path d="M0 400 L600 330" stroke="#8C8272" stroke-width="3"/>
+        <text x="470" y="355" font-family="DM Mono, monospace" font-size="12" fill="#5A5246">I-84</text>
+        <circle cx="528" cy="58" r="5" fill="#231F19"/><text x="490" y="40" font-family="DM Sans, sans-serif" font-size="15" fill="#231F19">Hawley</text>
+        <circle cx="292" cy="180" r="5" fill="#231F19"/><text x="262" y="166" font-family="DM Sans, sans-serif" font-size="15" fill="#231F19">Lakeville</text>
+        <g transform="translate(222 228)"><path d="M0 0 C-14 -16 -14 -30 0 -36 C14 -30 14 -16 0 0Z" fill="#F2B632" stroke="#231F19" stroke-width="2"/><circle cy="-24" r="5" fill="#231F19"/></g>
+        <text x="96" y="280" font-family="Newsreader, Georgia, serif" font-size="22" fill="#231F19">Caffrey</text>
+        <text x="300" y="250" font-family="Newsreader, Georgia, serif" font-style="italic" font-size="18" fill="#2B4E56">Lake Wallenpaupack</text>
+        <text x="20" y="412" font-family="DM Mono, monospace" font-size="10" fill="#8C8272">ILLUSTRATIVE · NOT TO SCALE</text>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow">Find us on the lake</span>
+      <h2>West shore, off Route 590.</h2>
+      <p class="lead">431 Lakeshore Drive, Lakeville, PA 18438, in the Pocono Mountains of Wayne County.</p>
+      <ul class="drive">
+        <li>Scranton <b>~45 min</b></li>
+        <li>Northern New Jersey <b>~1.5–2 hr</b></li>
+        <li>New York City <b>~2–2.5 hr</b></li>
+        <li>Philadelphia <b>~2.5 hr</b></li>
+      </ul>
+      <a class="tlink" href="/contact/#directions">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="sec-head"><h2>Before you ask.</h2><a class="tlink" href="/faq/" style="margin:0">All questions</a></div>
+    <div class="cards">
+      <div class="qcard"><small>PRICING</small><h3>What does a night cost?</h3><p>RV and trailer sites are $52, or $58 on weekends. Tent sites are $40, or $46 on weekends. Four guests are included.</p></div>
+      <div class="qcard"><small>BOATING</small><h3>Can I launch my boat?</h3><p>Yes. $10 covers launching and storage for your whole stay, and there’s a gas dock on site.</p></div>
+      <div class="qcard"><small>POLICIES</small><h3>Are pets allowed?</h3><p>No, pets aren’t permitted. Sites hold up to 8 guests, and kids under 5 stay free.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="feature reveal">
+    <div class="panel">
+      <span class="eyebrow" style="color:var(--pill)">Season fills fast</span>
+      <h2>Holiday weekends go first.</h2>
+      <p>A one-night deposit holds your site, or three nights on holidays. Cancel 15 or more days out for a refund less a $25 fee.</p>
+      <a class="btn" href="#book">Check availability</a>
+    </div>
+    <div class="ph" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="Boats tied along the dock"></div>
+  </div>
+</section>
+
+<section class="news">
   <div class="wrap">
-    <span class="eyebrow">Lake Wallenpaupack · Lakeville, Pennsylvania</span>
-    <h1>Wake up on Lake Wallenpaupack.</h1>
-    <p>Twenty-nine lakefront campsites on the quiet west shore, with your boat tied up a few steps from the fire ring.</p>
-    <div class="btns"><a class="btn" href="#plan">Plan your stay</a><a class="btn light" href="/camping/">Explore the campground</a></div>
-  </div>
-  <div class="conditions">
-    <div class="wrap">
-      <span>{{icon:tent}} 29 lakefront sites</span>
-      <span>{{icon:plug}} 30 amp + water</span>
-      <span>{{icon:boat}} Boat launch $10 / stay</span>
-      <span>{{icon:fuel}} On-site gas dock</span>
-      <span data-status><span class="dot"></span><span class="txt">Hours</span></span>
-      <a class="btn light" href="tel:{{tel}}">{{phone}}</a>
+    <div>
+      <span class="eyebrow">Stay in the loop</span>
+      <h2>First dibs on holiday weekends.</h2>
+      <p class="lead">Season dates, opening weekend and holiday availability, sent a few times a year.</p>
     </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true">Scroll</div>
-</section>
-
-<section>
-  <div class="wrap statement reveal">
-    <span class="eyebrow">Welcome to Caffrey</span>
-    <h2>A small, family-run campground on the west shore of <em>one of Pennsylvania’s largest lakes</em>, where the water, the docks and the launch are all a short walk away.</h2>
-  </div>
-</section>
-
-<section class="mist">
-  <div class="wrap editorial reveal">
-    <div class="ed-text">
-      <span class="eyebrow">The campsites</span>
-      <h2>Small on purpose. Right on the shoreline.</h2>
-      <p class="lead">No mega-resort crowds. Just 29 sites strung along the lake, each with 30 amp electric, water, a picnic table and a fire ring. Pull in the RV or pitch a tent, and the lake does the rest.</p>
-      <div class="btns"><a class="btn alt" href="/camping/">Our campsites</a></div>
-    </div>
-    <figure class="ed-media"><div style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="Low view along the wooden dock with covered boats on both sides"></div><figcaption>The Caffrey docks</figcaption></figure>
-  </div>
-</section>
-
-<section>
-  <div class="wrap editorial flip reveal">
-    <div class="ed-text">
-      <span class="eyebrow">Boating</span>
-      <h2>Bring the boat. We’ve got the rest.</h2>
-      <p class="lead">Store and launch for $10 for your whole stay, fuel up at the gas dock, and grab bait, ice and firewood at the camp store before heading out.</p>
-      <div class="btns"><a class="btn alt" href="/boating/">Boating at Caffrey</a></div>
-    </div>
-    <figure class="ed-media"><div style="background-image:url(/assets/img/photo3.jpg);background-position:center 70%" role="img" aria-label="Boats in their slips along the main dock"></div><figcaption>Launch · Slips · Gas dock</figcaption></figure>
-  </div>
-</section>
-
-<section class="navy" id="plan">
-  <div class="wrap split reveal" style="align-items:stretch">
-    <div style="display:flex;flex-direction:column;justify-content:center">
-      <span class="eyebrow">Plan your stay</span>
-      <h2>Your weekend, priced in ten seconds.</h2>
-      <p class="lead">Pick your setup and see the total and deposit right away. One tap sends us a reservation request with everything already filled in.</p>
-      <div style="margin-top:44px">
-        <p style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:12px">Office &amp; camp store hours</p>
-        <div class="days" data-hours></div>
-      </div>
-    </div>
-    <div class="calc" data-calc aria-label="Trip cost calculator">
-      <h2>Your trip</h2>
-      <div class="seg" role="group" aria-label="Site type">
-        <button type="button" data-type="rv" aria-pressed="true">RV / Trailer</button>
-        <button type="button" data-type="tent" aria-pressed="false">Tent</button>
-      </div>
-      <div class="row"><div>Weeknights<small>Regular rate</small></div><div class="step" data-step="reg"><button type="button" aria-label="Fewer weeknights">−</button><output>0</output><button type="button" aria-label="More weeknights">+</button></div></div>
-      <div class="row"><div>Weekend nights<small>Fri &amp; Sat</small></div><div class="step" data-step="wkd"><button type="button" aria-label="Fewer weekend nights">−</button><output>2</output><button type="button" aria-label="More weekend nights">+</button></div></div>
-      <div class="row"><div>Holiday nights<small>Holiday rate</small></div><div class="step" data-step="hol"><button type="button" aria-label="Fewer holiday nights">−</button><output>0</output><button type="button" aria-label="More holiday nights">+</button></div></div>
-      <div class="row"><div>Guests<small>4 included · kids under 5 free</small></div><div class="step" data-step="guests"><button type="button" aria-label="Fewer guests">−</button><output>4</output><button type="button" aria-label="More guests">+</button></div></div>
-      <div class="row"><div>Bringing a boat?<small>Storage + launch, whole stay</small></div><button type="button" class="toggle" data-boat aria-pressed="false" aria-label="Add boat launch"></button></div>
-      <div class="total">
-        <div><small>Estimated total</small><br><b data-total aria-live="polite">$116</b></div>
-        <div style="text-align:right"><small>Deposit to hold</small><br><span data-deposit style="font-size:20px">$58</span></div>
-      </div>
-      <div class="breakdown" data-breakdown></div>
-      <a class="btn" data-request href="mailto:{{email}}">Request these dates</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap reveal">
-    <div class="sec-head"><div><span class="eyebrow">On site</span><h2>Everything for a lake weekend</h2></div><a class="btn alt" href="/camping/">All amenities</a></div>
-    <div class="amen">
-      <div><div class="ic">{{icon:boat}}</div><h3>Boat launch</h3><p>Store and launch for $10 for your whole stay.</p></div>
-      <div><div class="ic">{{icon:fuel}}</div><h3>Gas dock</h3><p>Fuel up on the water, with no trailering out.</p></div>
-      <div><div class="ic">{{icon:plug}}</div><h3>30 amp + water</h3><p>Hookups at every single site.</p></div>
-      <div><div class="ic">{{icon:store}}</div><h3>Camp store</h3><p>Bait, tackle, firewood, ice and ice cream.</p></div>
-      <div><div class="ic">{{icon:fire}}</div><h3>Fire rings</h3><p>A fire ring and picnic table at every site.</p></div>
-      <div><div class="ic">{{icon:table}}</div><h3>Waterfront picnic</h3><p>Shared tables right on the shoreline.</p></div>
-      <div><div class="ic">{{icon:shower}}</div><h3>Hot showers</h3><p>Clean restrooms with hot showers.</p></div>
-      <div><div class="ic">{{icon:laundry}}</div><h3>Laundry</h3><p>On-site machines for longer stays.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="mist">
-  <div class="wrap reveal">
-    <div class="sec-head"><div><span class="eyebrow">Rates</span><h2>Simple pricing. No surprises.</h2></div><a class="btn alt" href="/rates/">Rates &amp; policies</a></div>
-    <div class="grid2">
-      <article class="tile rate-card">
-        <div><span class="pill">Most popular</span><h3 style="margin-top:18px">RV &amp; Trailer</h3></div>
-        <div class="tiers"><div><small>Regular</small><b>$52</b></div><div><small>Weekend</small><b>$58</b></div><div><small>Holiday</small><b>$65</b></div></div>
-        <ul class="checks"><li>30 amp electric &amp; water</li><li>Dump station access</li><li>Picnic table &amp; fire ring</li></ul>
-      </article>
-      <article class="tile rate-card">
-        <div><span class="pill sun">Up to 2 tents</span><h3 style="margin-top:18px">Tent Sites</h3></div>
-        <div class="tiers"><div><small>Regular</small><b>$40</b></div><div><small>Weekend</small><b>$46</b></div><div><small>Holiday</small><b>$48</b></div></div>
-        <ul class="checks"><li>Electric &amp; water at the site</li><li>Hot showers nearby</li><li>Picnic table &amp; fire ring</li></ul>
-      </article>
-    </div>
-    <p class="muted" style="margin-top:22px;font-size:15px">Per night, including 4 guests. Extra guests are $10 per night (max 8 per site), kids under 5 stay free. No pets.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap reveal" style="max-width:980px">
-    <div class="sec-head"><div><span class="eyebrow">Good to know</span><h2>Before you ask</h2></div><a class="btn alt" href="/faq/">All questions</a></div>
-    {{faq:home}}
-  </div>
-</section>
-
-<section class="band" style="padding:160px 0">
-  <div class="band-media" style="background-image:url(/assets/img/photo1.jpg)"></div>
-  <div class="wrap reveal">
-    <div><span class="eyebrow">Season fills fast</span><h2>Holiday weekends book first. Claim your spot on the shoreline.</h2></div>
-    <div class="btns" style="margin:0"><a class="btn" href="#plan">Plan your stay</a><a class="btn alt" href="tel:{{tel}}">Call {{phone}}</a></div>
+    <form data-news>
+      <input type="email" required placeholder="Email address" aria-label="Email address">
+      <button class="btn" type="submit">Sign up</button>
+    </form>
   </div>
 </section>

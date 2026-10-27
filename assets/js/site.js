@@ -4,13 +4,8 @@
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const EMAIL = 'Reservations@caffreyrecreation.com';
 
-  // Header turns solid once the hero scrolls away
-  const head = $('.site-head');
-  const onScroll = () => head && head.classList.toggle('scrolled', scrollY > 40);
-  addEventListener('scroll', onScroll, { passive: true }); onScroll();
-
-  // Full-screen menu
-  const burger = $('.burger'), panel = $('.menu-panel');
+  // Full-screen menu (phones and tablets)
+  const burger = $('.menu-btn'), panel = $('.menu-panel');
   const setMenu = open => {
     panel.classList.toggle('open', open);
     document.body.classList.toggle('menu-open', open);
@@ -39,6 +34,72 @@
     addEventListener('scroll', catchUp, { passive: true });
     addEventListener('hashchange', catchUp);
   } else reveals.forEach(el => el.classList.add('in'));
+
+  // Sliders: one slide visible, prev/next arrows and a "1 / N" counter
+  $$('[data-slider]').forEach(sl => {
+    const slides = $$('.slide', sl), count = $('[data-count]', sl);
+    let i = 0;
+    const show = n => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('on', k === i));
+      if (count) count.textContent = `${i + 1} / ${slides.length}`;
+    };
+    $('[data-prev]', sl).addEventListener('click', () => show(i - 1));
+    $('[data-next]', sl).addEventListener('click', () => show(i + 1));
+    show(0);
+  });
+
+  // Booking bar: Fri & Sat nights at weekend rates, other nights regular.
+  // Rates from caffreyrecreation.com/regular-camping-rates (holiday rates quoted on request).
+  const bar = $('[data-book]');
+  if (bar) {
+    const RATES = { rv: { reg: 52, wkd: 58, label: 'RV / Trailer' }, tent: { reg: 40, wkd: 46, label: 'Tent' } };
+    const f = name => $(`[name=${name}]`, bar);
+    const iso = dt => new Date(dt.getTime() - dt.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+    const parse = v => { const [y, m, dd] = v.split('-').map(Number); return new Date(y, m - 1, dd); };
+    // Default to the coming Friday → Sunday
+    const fri = new Date(); fri.setHours(0, 0, 0, 0); fri.setDate(fri.getDate() + ((5 - fri.getDay() + 7) % 7 || 7));
+    const sun = new Date(fri); sun.setDate(fri.getDate() + 2);
+    f('arrive').value = iso(fri); f('depart').value = iso(sun);
+    f('arrive').min = f('depart').min = iso(new Date());
+    const guests = { adults: 2, kids: 0 };
+    $$('[data-count-of]', bar).forEach(c => {
+      const k = c.dataset.countOf, out = $('span', c), [dn, up] = $$('button', c);
+      const set = v => {
+        const other = k === 'adults' ? guests.kids : guests.adults;
+        guests[k] = Math.max(k === 'adults' ? 1 : 0, Math.min(v, 8 - other)); // max 8 per site
+        out.textContent = `${guests[k]} ${k === 'adults' ? (guests[k] === 1 ? 'Adult' : 'Adults') : (guests[k] === 1 ? 'Kid' : 'Kids')}`;
+        render();
+      };
+      dn.addEventListener('click', () => set(guests[k] - 1));
+      up.addEventListener('click', () => set(guests[k] + 1));
+      out.textContent = `${guests[k]} ${k === 'adults' ? 'Adults' : 'Kids'}`;
+    });
+    function render() {
+      const r = RATES[f('site').value], a = parse(f('arrive').value), b = parse(f('depart').value);
+      let nights = 0, wkd = 0;
+      for (const t = new Date(a); t < b; t.setDate(t.getDate() + 1)) { nights++; if (t.getDay() === 5 || t.getDay() === 6) wkd++; }
+      const boat = f('boat').checked && nights ? 10 : 0;
+      // 4 guests included; kids under 5 free
+      const extra = Math.max(0, guests.adults - 4) * 10 * nights;
+      const total = wkd * r.wkd + (nights - wkd) * r.reg + extra + boat;
+      const dep = nights ? (wkd ? r.wkd : r.reg) : 0;
+      $('[data-est]', bar).innerHTML = nights > 0
+        ? `<span><b>$${total}</b> est. for ${nights} night${nights > 1 ? 's' : ''}${wkd ? ` (${wkd} weekend)` : ''}</span><span>Deposit to hold: $${dep} · holiday rates may apply</span>`
+        : '<span>Choose a departure after your arrival date</span>';
+      $('[data-request]', bar).href = `mailto:${EMAIL}?subject=${encodeURIComponent(`Reservation request: ${r.label} site, ${f('arrive').value} to ${f('depart').value}`)}&body=${encodeURIComponent(
+        `Hi Caffrey team,\n\nI'd like to request a ${r.label} site.\n\nArrive: ${f('arrive').value}\nDepart: ${f('depart').value} (${nights} nights)\nAdults: ${guests.adults}\nKids under 5: ${guests.kids}\nBoat launch: ${f('boat').checked ? 'Yes' : 'No'}\nEstimated total: $${total}\n\nName:\nPhone:\n`)}`;
+    }
+    ['site', 'arrive', 'depart', 'boat'].forEach(n => f(n).addEventListener('change', render));
+    render();
+  }
+
+  // Newsletter → pre-filled email (no backend)
+  $$('[data-news]').forEach(fm => fm.addEventListener('submit', e => {
+    e.preventDefault();
+    const em = $('input[type=email]', fm).value;
+    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Add me to the Caffrey list')}&body=${encodeURIComponent(`Please add ${em} to holiday-weekend and season updates.`)}`;
+  }));
 
   // Hours: Sun 9-5, Mon-Wed closed, Thu 9-5, Fri-Sat 9-6 (store/office)
   const H = [[9, 17], null, null, null, [9, 17], [9, 18], [9, 18]];

@@ -20,34 +20,24 @@
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://caffreyrecreation.com/"}, {"@type": "ListItem", "position": 2, "name": "Boating", "item": "https://caffreyrecreation.com/boating/"}]}</script>
 </head>
 <body class="inner">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
-  <div class="wrap">
-    <button class="burger" aria-label="Open menu" aria-controls="menu-panel" aria-expanded="false"><span></span></button>
-    <a class="logo" href="/" aria-label="Caffrey Recreation Area home"><b>CAFFREY</b><small>RECREATION AREA</small></a>
-    <div class="head-right">
-      <a class="head-link" href="/rates/">Rates</a>
-      <a class="head-link" href="/boating/">Boating</a>
-      <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
-      <a class="btn" href="/#plan">Plan your stay</a>
-    </div>
+  <div class="head-row">
+    <nav class="nav-box" aria-label="Main"><a href="/">Home</a><a href="/camping/">Camping</a><a href="/rates/">Rates</a><a href="/boating/" aria-current="page">Boating</a><a href="/lake-wallenpaupack-guide/">Lake Guide</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></nav>
+    <button class="menu-btn" aria-controls="menu-panel" aria-expanded="false">Menu</button>
+    <a class="logo-box" href="/" aria-label="Caffrey Recreation Area home">CAFFREY</a>
+    <a class="book-box" href="/#book">Book now</a>
   </div>
 </header>
 <div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
-  <div class="inner">
-    <button class="menu-close" aria-label="Close menu"><span aria-hidden="true">×</span> Close</button>
-    <ul class="menu"><li><a href="/">Home</a></li><li><a href="/camping/">Camping</a></li><li><a href="/rates/">Rates</a></li><li><a href="/boating/" aria-current="page">Boating</a></li><li><a href="/lake-wallenpaupack-guide/">Lake Guide</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact</a></li></ul>
-    <div class="menu-contact">
-      <div>431 Lakeshore Drive<br>Lakeville, PA 18438</div>
-      <div><a href="tel:+15702264608">(570) 226-4608</a><br><a href="mailto:Reservations@caffreyrecreation.com">Email reservations</a></div>
-    </div>
-  </div>
-  <div class="menu-photo" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The Caffrey dock on Lake Wallenpaupack"></div>
+  <button class="menu-close">Close</button>
+  <ul class="menu"><li><a href="/">Home</a></li><li><a href="/camping/">Camping</a></li><li><a href="/rates/">Rates</a></li><li><a href="/boating/">Boating</a></li><li><a href="/lake-wallenpaupack-guide/">Lake Guide</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact</a></li></ul>
+  <div class="menu-contact">431 Lakeshore Drive, Lakeville, PA 18438<br><a href="tel:+15702264608">(570) 226-4608</a> · <a href="mailto:Reservations@caffreyrecreation.com">Email reservations</a></div>
 </div>
 <main id="main">
 <div class="wrap page-hero">
@@ -55,7 +45,7 @@
   <span class="eyebrow">Boating</span>
   <h1>Camp with your boat on Lake Wallenpaupack.</h1>
   <p class="answer" style="margin-top:22px">Campers at Caffrey can store and launch a boat for $10 for their entire stay, and fuel up at the on-site gas dock without leaving Lake Wallenpaupack.</p>
-  <div class="btns"><a class="btn" href="/#plan">Price a trip with a boat</a><a class="btn alt" href="tel:+15702264608">Call (570) 226-4608</a></div>
+  <div class="btns"><a class="btn" href="/#book">Check availability</a><a class="btn alt" href="tel:+15702264608">Call (570) 226-4608</a></div>
 </div>
 
 <section style="padding-top:40px">
@@ -108,7 +98,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+        <a class="flogo" href="/">CAFFREY</a>
         <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
@@ -117,13 +107,13 @@
         <li><a href="tel:+15702264608">(570) 226-4608</a></li>
         <li><a href="mailto:Reservations@caffreyrecreation.com">Reservations@caffreyrecreation.com</a></li>
         <li class="muted">431 Lakeshore Drive<br>Lakeville, PA 18438</li>
-        <li><span class="muted" style="font-size:13px">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</span></li>
+        <li class="muted">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</li>
       </ul></div>
     </div>
     <div class="legal"><span>© <span data-year>2026</span> Caffrey Recreation LLC</span><span>No pets · Max 8 guests per site</span></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn alt" href="tel:+15702264608">Call</a><a class="btn" href="/#plan">Plan your stay</a></div>
+<div class="callbar"><a class="btn alt" href="tel:+15702264608">Call</a><a class="btn" href="/#book">Book now</a></div>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

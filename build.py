@@ -191,7 +191,7 @@ def head(page, schemas):
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 {ld}
 </head>
@@ -201,34 +201,24 @@ def head(page, schemas):
 
 def header(page):
     current = ' aria-current="page"'
-    home = ' aria-current="page"' if page["src"] == "home" else ""
-    links = f'<li><a href="/"{home}>Home</a></li>' + "".join(
-        f'<li><a href="{href}"{current if page["nav"] == key else ""}>{label}</a></li>'
-        for key, label, href in NAV)
+    home = current if page["src"] == "home" else ""
+    nav = f'<a href="/"{home}>Home</a>' + "".join(
+        f'<a href="{href}"{current if page["nav"] == key else ""}>{label}</a>' for key, label, href in NAV)
+    menu = f'<li><a href="/">Home</a></li>' + "".join(f'<li><a href="{href}">{label}</a></li>' for _, label, href in NAV)
     b = BUSINESS
     return f"""
 <header class="site-head">
-  <div class="wrap">
-    <button class="burger" aria-label="Open menu" aria-controls="menu-panel" aria-expanded="false"><span></span></button>
-    <a class="logo" href="/" aria-label="Caffrey Recreation Area home"><b>CAFFREY</b><small>RECREATION AREA</small></a>
-    <div class="head-right">
-      <a class="head-link" href="/rates/">Rates</a>
-      <a class="head-link" href="/boating/">Boating</a>
-      <a class="status" href="/contact/" data-status><span class="dot"></span><span class="txt">Hours</span></a>
-      <a class="btn" href="/#plan">Plan your stay</a>
-    </div>
+  <div class="head-row">
+    <nav class="nav-box" aria-label="Main">{nav}</nav>
+    <button class="menu-btn" aria-controls="menu-panel" aria-expanded="false">Menu</button>
+    <a class="logo-box" href="/" aria-label="Caffrey Recreation Area home">CAFFREY</a>
+    <a class="book-box" href="/#book">Book now</a>
   </div>
 </header>
 <div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
-  <div class="inner">
-    <button class="menu-close" aria-label="Close menu"><span aria-hidden="true">×</span> Close</button>
-    <ul class="menu">{links}</ul>
-    <div class="menu-contact">
-      <div>{b['street']}<br>{b['city']}, {b['region']} {b['zip']}</div>
-      <div><a href="tel:{b['tel']}">{b['phone']}</a><br><a href="mailto:{b['email']}">Email reservations</a></div>
-    </div>
-  </div>
-  <div class="menu-photo" style="background-image:url(/assets/img/photo1.jpg)" role="img" aria-label="The Caffrey dock on Lake Wallenpaupack"></div>
+  <button class="menu-close">Close</button>
+  <ul class="menu">{menu}</ul>
+  <div class="menu-contact">{b['street']}, {b['city']}, {b['region']} {b['zip']}<br><a href="tel:{b['tel']}">{b['phone']}</a> · <a href="mailto:{b['email']}">Email reservations</a></div>
 </div>
 <main id="main">"""
 
@@ -244,7 +234,7 @@ FOOTER = f"""</main>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/"><b>CAFFREY</b><small>RECREATION AREA</small></a>
+        <a class="flogo" href="/">CAFFREY</a>
         <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
@@ -253,13 +243,13 @@ FOOTER = f"""</main>
         <li><a href="tel:{BUSINESS['tel']}">{BUSINESS['phone']}</a></li>
         <li><a href="mailto:{BUSINESS['email']}">{BUSINESS['email']}</a></li>
         <li class="muted">{BUSINESS['street']}<br>{BUSINESS['city']}, {BUSINESS['region']} {BUSINESS['zip']}</li>
-        <li><span class="muted" style="font-size:13px">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</span></li>
+        <li class="muted">Thu &amp; Sun 9–5 · Fri &amp; Sat 9–6</li>
       </ul></div>
     </div>
     <div class="legal"><span>© <span data-year>2026</span> {BUSINESS['legal']}</span><span>No pets · Max 8 guests per site</span></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#plan">Plan your stay</a></div>
+<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#book">Book now</a></div>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
@@ -282,8 +272,6 @@ def build():
             schemas.append(breadcrumb_schema(page))
         if page["src"] == "faq":
             schemas.append(faq_schema(faq))
-        elif page["src"] == "home":
-            schemas.append(faq_schema(faq, limit=True))
 
         out = ROOT / page["out"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
