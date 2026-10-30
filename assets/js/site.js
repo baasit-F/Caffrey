@@ -53,7 +53,7 @@
   // Rates from caffreyrecreation.com/regular-camping-rates (holiday rates quoted on request).
   const bar = $('[data-book]');
   if (bar) {
-    const RATES = { rv: { reg: 52, wkd: 58, label: 'RV / Trailer' }, tent: { reg: 40, wkd: 46, label: 'Tent' } };
+    const RATES = { rv: { reg: 52, wkd: 58, hol: 65, label: 'RV / Trailer' }, tent: { reg: 40, wkd: 46, hol: 48, label: 'Tent' } };
     const f = name => $(`[name=${name}]`, bar);
     const iso = dt => new Date(dt.getTime() - dt.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
     const parse = v => { const [y, m, dd] = v.split('-').map(Number); return new Date(y, m - 1, dd); };
@@ -80,19 +80,57 @@
       let nights = 0, wkd = 0;
       for (const t = new Date(a); t < b; t.setDate(t.getDate() + 1)) { nights++; if (t.getDay() === 5 || t.getDay() === 6) wkd++; }
       const boat = f('boat').checked && nights ? 10 : 0;
+      // Holiday stays: every night at the holiday rate, three-night deposit
+      const hol = f('holiday').checked;
       // 4 guests included; kids under 5 free
       const extra = Math.max(0, guests.adults - 4) * 10 * nights;
-      const total = wkd * r.wkd + (nights - wkd) * r.reg + extra + boat;
-      const dep = nights ? (wkd ? r.wkd : r.reg) : 0;
+      const lodging = hol ? nights * r.hol : wkd * r.wkd + (nights - wkd) * r.reg;
+      const total = lodging + extra + boat;
+      const dep = !nights ? 0 : hol ? Math.min(3, nights) * r.hol : (wkd ? r.wkd : r.reg);
+      const detail = hol ? 'holiday rate' : wkd ? `${wkd} weekend` : '';
       $('[data-est]', bar).innerHTML = nights > 0
-        ? `<span><b>$${total}</b> est. for ${nights} night${nights > 1 ? 's' : ''}${wkd ? ` (${wkd} weekend)` : ''}</span><span>Deposit to hold: $${dep} · holiday rates may apply</span>`
-        : '<span>Choose a departure after your arrival date</span>';
+        ? `<span><b>$${total}</b> est. for ${nights} night${nights > 1 ? 's' : ''}${detail ? ` (${detail})` : ''}</span><span>Deposit to hold your site: $${dep}</span>`
+        : '<span>Choose a departure date after your arrival date</span>';
       $('[data-request]', bar).href = `mailto:${EMAIL}?subject=${encodeURIComponent(`Reservation request: ${r.label} site, ${f('arrive').value} to ${f('depart').value}`)}&body=${encodeURIComponent(
-        `Hi Caffrey team,\n\nI'd like to request a ${r.label} site.\n\nArrive: ${f('arrive').value}\nDepart: ${f('depart').value} (${nights} nights)\nAdults: ${guests.adults}\nKids under 5: ${guests.kids}\nBoat launch: ${f('boat').checked ? 'Yes' : 'No'}\nEstimated total: $${total}\n\nName:\nPhone:\n`)}`;
+        `Hi Caffrey team,\n\nI'd like to request a ${r.label} site.\n\nArrive: ${f('arrive').value}\nDepart: ${f('depart').value} (${nights} night${nights === 1 ? '' : 's'})\nAdults: ${guests.adults}\nKids under 5: ${guests.kids}\nBoat launch: ${f('boat').checked ? 'Yes' : 'No'}\nHoliday stay: ${f('holiday').checked ? 'Yes' : 'No'}\nEstimated total: $${total}\n\nName:\nPhone:\n`)}`;
     }
-    ['site', 'arrive', 'depart', 'boat'].forEach(n => f(n).addEventListener('change', render));
+    // Keep departure after arrival
+    f('arrive').addEventListener('change', () => {
+      if (f('depart').value <= f('arrive').value) { const d = parse(f('arrive').value); d.setDate(d.getDate() + 1); f('depart').value = iso(d); }
+      f('depart').min = f('arrive').value;
+    });
+    ['site', 'arrive', 'depart', 'boat', 'holiday'].forEach(n => f(n).addEventListener('change', render));
     render();
   }
+
+  // Photo gallery lightbox: click a photo to view it large; arrows and Escape work
+  $$('[data-gallery]').forEach(g => {
+    const links = $$('a', g);
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Photo viewer');
+    box.innerHTML = '<img alt=""><button class="lb-close" aria-label="Close">×</button><button class="lb-prev" aria-label="Previous photo">‹</button><button class="lb-next" aria-label="Next photo">›</button>';
+    document.body.appendChild(box);
+    const img = $('img', box);
+    let i = 0;
+    const show = n => { i = (n + links.length) % links.length; img.src = links[i].href; img.alt = $('img', links[i]).alt; };
+    const close = () => { box.classList.remove('open'); document.body.classList.remove('menu-open'); links[i].focus(); };
+    links.forEach((a, k) => a.addEventListener('click', e => {
+      e.preventDefault(); show(k); box.classList.add('open'); document.body.classList.add('menu-open'); $('.lb-close', box).focus();
+    }));
+    $('.lb-close', box).addEventListener('click', close);
+    $('.lb-prev', box).addEventListener('click', () => show(i - 1));
+    $('.lb-next', box).addEventListener('click', () => show(i + 1));
+    box.addEventListener('click', e => { if (e.target === box) close(); });
+    addEventListener('keydown', e => {
+      if (!box.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(i - 1);
+      if (e.key === 'ArrowRight') show(i + 1);
+    });
+  });
 
   // Newsletter → pre-filled email (no backend)
   $$('[data-news]').forEach(fm => fm.addEventListener('submit', e => {

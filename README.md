@@ -35,7 +35,9 @@ python3 -m http.server 4321
 - `export_mockup.py`: writes a portable, clearly labelled Caffrey-only mockup (relative links, noindex, no Capri mentions) to `dist/` and zips it for sharing
 
 ## Confirm with the client before launch
-- Season open/close dates, and the full campground rules
+- Season open/close dates
+- Number of campsites (not stated on their current site)
+- Permission to reuse the photos from caffreyrecreation.com, and the refreshed paddles logo
 - Lake facts on the guide page (acreage, shoreline, fish species, drive times)
 - Capri Marine relationship and wording
 - ZIP 18438 (some directories list 18348)

@@ -39,10 +39,10 @@ MENU_EXTRA = [("contact", "Contact & Directions", "/contact/")]
 PAGES = [
     dict(src="home", out="", nav=None, crumb=None,
          title="Lake Wallenpaupack Camping & Boat Launch | Caffrey Recreation Area",
-         desc="Lakefront RV and tent camping on Lake Wallenpaupack's west shore in Lakeville, PA. 29 waterfront sites, boat launch, gas dock and camp store. Price your trip in seconds."),
+         desc="Lakefront RV and tent camping on Lake Wallenpaupack's west shore in Lakeville, PA. RV and tent sites, boat launch, gas dock and camp store. Price your trip in seconds."),
     dict(src="camping", out="camping/", nav="camping", crumb="Camping",
          title="Lakefront RV & Tent Camping on Lake Wallenpaupack | Caffrey",
-         desc="29 waterfront campsites with 30 amp electric, water, picnic tables and fire rings on Lake Wallenpaupack in the Poconos. RV, trailer and tent sites."),
+         desc="Shady campsites with 30 amp electric, water, picnic tables and fire rings on Lake Wallenpaupack in the Poconos. RV, trailer and tent sites."),
     dict(src="rates", out="rates/", nav="rates", crumb="Rates & Policies",
          title="Camping Rates & Policies | Caffrey Recreation Area, Lakeville PA",
          desc="RV sites $52–$65, tent sites $40–$48 per night on Lake Wallenpaupack. Deposits, cancellation policy, guest limits and what's included."),
@@ -92,22 +92,21 @@ LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32
         'stroke="#0d1b1e" stroke-width="2" fill="none" stroke-linecap="round"/></svg>')
 
 
-def badge(sfx):
-    """Round campground badge (mockup logo). sfx keeps ids unique when it appears twice on a page."""
-    return f'''<svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
-<defs><clipPath id="bc{sfx}"><circle cx="60" cy="60" r="44"/></clipPath>
-<path id="bt{sfx}" d="M12 60A48 48 0 0 1 108 60"/><path id="bb{sfx}" d="M6 60A54 54 0 0 0 114 60"/></defs>
-<circle cx="60" cy="60" r="58" fill="#2F4A3A"/><circle cx="60" cy="60" r="52.5" fill="none" stroke="#F4EBD6" stroke-width="1" opacity=".5"/>
-<g clip-path="url(#bc{sfx})"><rect width="120" height="120" fill="#F4EBD6"/><circle cx="82" cy="40" r="9" fill="#E9A23B"/>
-<path d="M16 66 40 44l16 12 14-16 34 26Z" fill="#7C9A6E"/>
-<path d="M30 70l7-22 7 22ZM40 70l6-17 6 17ZM70 70l7-24 7 24ZM82 70l6-16 6 16Z" fill="#2F4A3A"/>
-<rect y="68" width="120" height="40" fill="#3E7A8C"/><path d="M24 86c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3 6-3 12-3 6 3 12 3M30 96c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3 6-3 12-3" stroke="#F4EBD6" stroke-width="1.6" fill="none" opacity=".7"/></g>
-<text font-family="Poppins,sans-serif" font-weight="600" font-size="8.2" letter-spacing="1.6" fill="#F4EBD6"><textPath href="#bt{sfx}" startOffset="50%" text-anchor="middle">LAKE WALLENPAUPACK</textPath></text>
-<text font-family="Poppins,sans-serif" font-weight="600" font-size="7.4" letter-spacing="1.8" fill="#F4EBD6"><textPath href="#bb{sfx}" startOffset="50%" text-anchor="middle">LAKEVILLE · PA</textPath></text>
-<path d="M2 56h10l-4 8 4 8H2l3-8Z M118 56h-10l4 8-4 8h10l-3-8Z" fill="#8E3F22"/>
-<rect x="8" y="53" width="104" height="22" rx="2" fill="#C25E34"/>
-<text x="60" y="69.5" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="15" letter-spacing="2.4" fill="#fff">CAFFREY</text>
+def mark(cls="mark"):
+    """Caffrey paddles mark: a cleaner redraw of their crossed-paddles logo (tent, campfire, sailboat, gas pump)."""
+    return f'''<svg class="{cls}" viewBox="0 0 120 120" aria-hidden="true">
+<g stroke="#24392D" stroke-width="5.5" stroke-linecap="round"><path d="M29 97 86 34M91 97 34 34"/><path d="M23.5 91.5l11 11M96.5 91.5l-11 11"/></g>
+<g fill="#24392D"><ellipse rx="8.5" ry="17" transform="translate(94 25) rotate(42)"/><ellipse rx="8.5" ry="17" transform="translate(26 25) rotate(-42)"/></g>
+<path d="M48 40 60 18l12 22Z" fill="#46663F"/><path d="M57 40l3-7 3 7Z" fill="#F4F2EA"/>
+<path d="M22 50c5 5 8 9 8 13.5a8 8 0 0 1-16 0c0-3.5 1.6-6 3.4-7.8.2 2.6 1 4.3 2.6 5.3-.2-4 .2-7.6 2-11Z" fill="#C25E34"/><path d="M22 58.5c2.4 2.4 3.8 4.4 3.8 6.4a3.8 3.8 0 0 1-7.6 0c0-1.9 1-3.3 1.9-4.2.2 1.1.6 1.9 1.2 2.4 0-1.7.2-3.2.7-4.6Z" fill="#E9A23B"/><path d="M13 77l18-5M13 72l18 5" stroke="#24392D" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M96 46v22h13Z" fill="#3E7A8C"/><path d="M93 52v16h-8Z" fill="#3E7A8C"/><path d="M83 72h28l-4.5 5.5H87.5Z" fill="#3E7A8C"/>
+<rect x="52" y="82" width="13" height="20" rx="2.5" fill="#D9A13B"/><rect x="54.5" y="85" width="8" height="5.5" rx="1" fill="#F4F2EA"/><path d="M65 87h2.5a2 2 0 0 1 2 2v8a2 2 0 0 0 4 0V87l-3-3" fill="none" stroke="#D9A13B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M49.5 102.5h18" stroke="#D9A13B" stroke-width="2.6" stroke-linecap="round"/>
 </svg>'''
+
+
+def lockup(cls=""):
+    return (f'<span class="lockup {cls}">{mark()}<span class="word"><b>CAFFREY</b>'
+            '<small>RECREATION AREA</small></span></span>')
 
 
 def business_schema():
@@ -121,9 +120,9 @@ def business_schema():
         "url": f"{SITE}/",
         "telephone": "+1-570-226-4608",
         "email": b["email"],
-        "image": f"{SITE}/assets/img/photo3.jpg",
+        "image": f"{SITE}/assets/img/hero-drone.jpg",
         "logo": f"{SITE}/assets/img/logo.svg",
-        "description": "Family-run lakefront campground with 29 waterfront RV and tent sites, boat launch, gas dock and camp store on the west shore of Lake Wallenpaupack in the Pocono Mountains.",
+        "description": "Family-run lakefront campground with RV, trailer and tent sites, boat launch, gas dock and camp store on the west shore of Lake Wallenpaupack in the Pocono Mountains.",
         "priceRange": "$40–$65 per night",
         "currenciesAccepted": "USD",
         "petsAllowed": False,
@@ -133,8 +132,8 @@ def business_schema():
         "containedInPlace": {"@type": "LakeBodyOfWater", "name": "Lake Wallenpaupack",
                              "sameAs": "https://en.wikipedia.org/wiki/Lake_Wallenpaupack"},
         "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in [
-            "Lakefront campsites", "30 amp electric hookups", "Water hookups", "RV dump station", "Boat launch",
-            "Boat storage", "Gas dock", "Camp store", "Hot showers", "Laundry", "Waterfront picnic area",
+            "Lakefront campground", "30 amp electric hookups", "Water hookups", "RV dump station", "Boat launch",
+            "Boat storage", "Gas dock", "Camp store", "Coin-operated showers", "Coin-operated laundry", "Waterfront picnic area",
             "Fire rings", "Picnic tables"]],
         "openingHoursSpecification": [
             {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday", "Sunday"], "opens": "09:00", "closes": "17:00"},
@@ -202,7 +201,7 @@ def head(page, schemas):
 <meta property="og:title" content="{html.escape(page['title'])}">
 <meta property="og:description" content="{html.escape(page['desc'])}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/img/photo3.jpg">
+<meta property="og:image" content="{SITE}/assets/img/hero-drone.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="geo.region" content="US-PA">
 <meta name="geo.placename" content="Lakeville, Pennsylvania">
@@ -225,7 +224,7 @@ def header(page):
     return f"""
 <header class="site-head">
   <div class="head-row">
-    <a class="logo" href="/" aria-label="Caffrey Recreation Area home">{badge("h")}</a>
+    <a class="logo" href="/" aria-label="Caffrey Recreation Area home">{lockup()}</a>
     <nav class="nav" aria-label="Main">{nav}</nav>
     <a class="btn book" href="/#book">Book Now</a>
     <button class="menu-btn" aria-controls="menu-panel" aria-expanded="false"><span></span>Menu</button>
@@ -250,7 +249,7 @@ FOOTER = f"""</main>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="flogo" href="/" aria-label="Caffrey Recreation Area home">{badge("f")}</a>
+        <a class="flogo" href="/" aria-label="Caffrey Recreation Area home">{lockup("light")}</a>
         <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
