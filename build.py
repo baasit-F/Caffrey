@@ -42,7 +42,7 @@ PAGES = [
          desc="Lakefront RV and tent camping on Lake Wallenpaupack's west shore in Lakeville, PA. RV and tent sites, boat launch, gas dock and camp store. Price your trip in seconds."),
     dict(src="camping", out="camping/", nav="camping", crumb="Camping",
          title="Lakefront RV & Tent Camping on Lake Wallenpaupack | Caffrey",
-         desc="Shady campsites with 30 amp electric, water, picnic tables and fire rings on Lake Wallenpaupack in the Poconos. RV, trailer and tent sites."),
+         desc="Wooded campsites with 30 amp electric, water, picnic tables and fire rings on Lake Wallenpaupack in the Poconos. RV, trailer and tent sites."),
     dict(src="rates", out="rates/", nav="rates", crumb="Rates & Policies",
          title="Camping Rates & Policies | Caffrey Recreation Area, Lakeville PA",
          desc="RV sites $52–$65, tent sites $40–$48 per night on Lake Wallenpaupack. Deposits, cancellation policy, guest limits and what's included."),
