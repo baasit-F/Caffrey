@@ -33,8 +33,8 @@ NAV = [
     ("boating", "Boating", "/boating/"),
     ("guide", "Lake Guide", "/lake-wallenpaupack-guide/"),
     ("faq", "FAQ", "/faq/"),
-    ("contact", "Contact", "/contact/"),
 ]
+MENU_EXTRA = [("contact", "Contact & Directions", "/contact/")]
 
 PAGES = [
     dict(src="home", out="", nav=None, crumb=None,
@@ -90,6 +90,24 @@ def icon(name):
 LOGO = ('<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3cc6b4"/>'
         '<path d="M6 21 13 11l4 5 3-3 6 8Z" fill="#0d1b1e"/><path d="M5 24c3 0 3-1.5 5.5-1.5S13 24 16 24s3-1.5 5.5-1.5S24 24 27 24" '
         'stroke="#0d1b1e" stroke-width="2" fill="none" stroke-linecap="round"/></svg>')
+
+
+def badge(sfx):
+    """Round campground badge (mockup logo). sfx keeps ids unique when it appears twice on a page."""
+    return f'''<svg class="badge" viewBox="0 0 120 120" aria-hidden="true">
+<defs><clipPath id="bc{sfx}"><circle cx="60" cy="60" r="44"/></clipPath>
+<path id="bt{sfx}" d="M12 60A48 48 0 0 1 108 60"/><path id="bb{sfx}" d="M6 60A54 54 0 0 0 114 60"/></defs>
+<circle cx="60" cy="60" r="58" fill="#2F4A3A"/><circle cx="60" cy="60" r="52.5" fill="none" stroke="#F4EBD6" stroke-width="1" opacity=".5"/>
+<g clip-path="url(#bc{sfx})"><rect width="120" height="120" fill="#F4EBD6"/><circle cx="82" cy="40" r="9" fill="#E9A23B"/>
+<path d="M16 66 40 44l16 12 14-16 34 26Z" fill="#7C9A6E"/>
+<path d="M30 70l7-22 7 22ZM40 70l6-17 6 17ZM70 70l7-24 7 24ZM82 70l6-16 6 16Z" fill="#2F4A3A"/>
+<rect y="68" width="120" height="40" fill="#3E7A8C"/><path d="M24 86c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3 6-3 12-3 6 3 12 3M30 96c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3 6-3 12-3" stroke="#F4EBD6" stroke-width="1.6" fill="none" opacity=".7"/></g>
+<text font-family="Poppins,sans-serif" font-weight="600" font-size="8.2" letter-spacing="1.6" fill="#F4EBD6"><textPath href="#bt{sfx}" startOffset="50%" text-anchor="middle">LAKE WALLENPAUPACK</textPath></text>
+<text font-family="Poppins,sans-serif" font-weight="600" font-size="7.4" letter-spacing="1.8" fill="#F4EBD6"><textPath href="#bb{sfx}" startOffset="50%" text-anchor="middle">LAKEVILLE · PA</textPath></text>
+<path d="M2 56h10l-4 8 4 8H2l3-8Z M118 56h-10l4 8-4 8h10l-3-8Z" fill="#8E3F22"/>
+<rect x="8" y="53" width="104" height="22" rx="2" fill="#C25E34"/>
+<text x="60" y="69.5" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="15" letter-spacing="2.4" fill="#fff">CAFFREY</text>
+</svg>'''
 
 
 def business_schema():
@@ -178,7 +196,7 @@ def head(page, schemas):
 <title>{html.escape(page['title'])}</title>
 <meta name="description" content="{html.escape(page['desc'])}">
 <link rel="canonical" href="{url}">
-<meta name="theme-color" content="#0d1b1e">
+<meta name="theme-color" content="#2F4A3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Caffrey Recreation Area">
 <meta property="og:title" content="{html.escape(page['title'])}">
@@ -191,7 +209,7 @@ def head(page, schemas):
 <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 {ld}
 </head>
@@ -201,18 +219,16 @@ def head(page, schemas):
 
 def header(page):
     current = ' aria-current="page"'
-    home = current if page["src"] == "home" else ""
-    nav = f'<a href="/"{home}>Home</a>' + "".join(
-        f'<a href="{href}"{current if page["nav"] == key else ""}>{label}</a>' for key, label, href in NAV)
-    menu = f'<li><a href="/">Home</a></li>' + "".join(f'<li><a href="{href}">{label}</a></li>' for _, label, href in NAV)
+    nav = "".join(f'<a href="{href}"{current if page["nav"] == key else ""}>{label}</a>' for key, label, href in NAV)
+    menu = '<li><a href="/">Home</a></li>' + "".join(f'<li><a href="{href}">{label}</a></li>' for _, label, href in NAV + MENU_EXTRA)
     b = BUSINESS
     return f"""
 <header class="site-head">
   <div class="head-row">
-    <nav class="nav-box" aria-label="Main">{nav}</nav>
-    <button class="menu-btn" aria-controls="menu-panel" aria-expanded="false">Menu</button>
-    <a class="logo-box" href="/" aria-label="Caffrey Recreation Area home">CAFFREY</a>
-    <a class="book-box" href="/#book">Book now</a>
+    <a class="logo" href="/" aria-label="Caffrey Recreation Area home">{badge("h")}</a>
+    <nav class="nav" aria-label="Main">{nav}</nav>
+    <a class="btn book" href="/#book">Book Now</a>
+    <button class="menu-btn" aria-controls="menu-panel" aria-expanded="false"><span></span>Menu</button>
   </div>
 </header>
 <div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Site menu">
@@ -234,7 +250,7 @@ FOOTER = f"""</main>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="flogo" href="/">CAFFREY</a>
+        <a class="flogo" href="/" aria-label="Caffrey Recreation Area home">{badge("f")}</a>
         <p style="max-width:340px">Family-run lakefront camping on the west shore of Lake Wallenpaupack, in the Pocono Mountains of Pennsylvania.</p>
       </div>
       <div><h4>Stay</h4><ul><li><a href="/camping/">Campsites</a></li><li><a href="/rates/">Rates &amp; policies</a></li><li><a href="/boating/">Boat launch &amp; gas</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
@@ -249,7 +265,7 @@ FOOTER = f"""</main>
     <div class="legal"><span>© <span data-year>2026</span> {BUSINESS['legal']}</span><span>No pets · Max 8 guests per site</span></div>
   </div>
 </footer>
-<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#book">Book now</a></div>
+<div class="callbar"><a class="btn alt" href="tel:{BUSINESS['tel']}">Call</a><a class="btn" href="/#book">Book Now</a></div>
 <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
